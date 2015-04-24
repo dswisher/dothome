@@ -16,16 +16,17 @@ echoYellow() { echo -e "${yellow}$1${reset}"; }
 dolink() {
 	echo "Linking: ~/$1 -> $DIR/$1"
 	rm -f ~/$1
-	ln -s $DIR/$1 ~/$1
+	ln -s $DIR/home/$1 ~/$1
 }
 
 
 case "$1" in
 link)
-	dolink ".foo"
-	dolink ".testdir"
-#	echoYellow "Link is not yet implemented."
-#	echoGreen "Dir: $DIR"
+	dolink ".gvimrc"
+	dolink ".inputrc"
+	dolink ".screenrc"
+	dolink ".vimrc"
+#	dolink ".testdir"
 ;;
 
 update)

@@ -1,0 +1,4 @@
+# ~/.inputrc: readline initialization file.
+
+set editing-mode vi
+
