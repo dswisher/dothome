@@ -38,7 +38,7 @@ link)
 	dolink ".inputrc"
 	dolink ".screenrc"
 	dolink ".vimrc"
-#	dolink ".testdir"
+	dolink ".vim"
 ;;
 
 update)
