@@ -2,9 +2,23 @@
 "  Doug's VIM initialization file
 "
 
-" Load modules in .vim/bundles
-" See https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
+" Vundle setup and load plugins
+"   https://github.com/gmarik/Vundle.vim
+set nocompatible        " don't try to be compatible with vi
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Nerdtree - file explorer - https://github.com/scrooloose/nerdtree
+Plugin 'scrooloose/nerdtree'
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " - - - - - - 
 " Set up the display: reverse video, rather large display
@@ -16,7 +30,6 @@ syntax on               " syntax coloring is very cool...turn it on...
 
 
 set autoindent          " always set autoindenting on
-set nocompatible        " don't try to be compatible with vi
 set hidden              " keep hidden buffers
 set incsearch           " show search progress
 set laststatus=2        " always show a status line
