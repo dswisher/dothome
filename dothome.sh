@@ -15,7 +15,19 @@ echoYellow() { echo -e "${yellow}$1${reset}"; }
 
 dolink() {
 	echo "Linking: ~/$1 -> $DIR/$1"
-	rm -f ~/$1
+
+	# If file exists (not a symlink), make a backup of the file
+	if [ -e ~/$1 ] || [ -h ~/$1 ]
+	then
+		if [ ! -h ~/$1 ]
+		then
+			echo "Saving ~/$1 to ~/$1.SAVE"
+			mv ~/$1 ~/$1.SAVE
+		else
+			rm ~/$1
+		fi
+	fi
+
 	ln -s $DIR/home/$1 ~/$1
 }
 
