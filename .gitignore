@@ -1,4 +1,3 @@
 *.swp
 home/.vim/bundle/Vundle.vim/
-home/.vim/bundle/lightline.vim/
 home/.vim/bundle/nerdtree/
