@@ -33,6 +33,7 @@ set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
 
+map <C-n> :NERDTreeToggle<CR>
 
 " When starting to edit a file:
 "   For *.c and *.h files set formatting of comments and set C-indenting on
