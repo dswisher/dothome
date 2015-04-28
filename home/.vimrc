@@ -16,6 +16,8 @@ Plugin 'gmarik/Vundle.vim'
 " Nerdtree - file explorer - https://github.com/scrooloose/nerdtree
 Plugin 'scrooloose/nerdtree'
 
+" CtrlP - fuzzy file/buffer finder - https://github.com/kien/ctrlp.vim
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,13 +48,12 @@ set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
 
+" - - - - NerdTree Setup
 map <C-n> :NERDTreeToggle<CR>
 
-" When starting to edit a file:
-"   For *.c and *.h files set formatting of comments and set C-indenting on
-"   For other files switch it off
-"   Don't change the sequence, it's important that the line with * comes first.
-
-"autocmd BufNewFile,BufRead  *           set nocindent
-"autocmd BufNewFile,BufRead  *.c,*.h     set cindent cinoptions={4,c0
+" - - - - CtrlP Setup
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|(obj|bin))$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
 
