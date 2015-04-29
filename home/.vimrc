@@ -38,6 +38,7 @@ set autoindent          " always set autoindenting on
 set hidden              " keep hidden buffers
 set incsearch           " show search progress
 set laststatus=2        " always show a status line
+set makeprg=xbuild      " doing mono development by default
 set ruler               " show line,column in status line
 " set scrolloff=1         " keep a couple of lines above/below cursor
 set shiftround          " round indent when using > and <
