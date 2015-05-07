@@ -22,6 +22,9 @@ Plugin 'kien/ctrlp.vim'
 " Syntastic - syntax checker - https://github.com/scrooloose/syntastic
 Plugin 'scrooloose/syntastic'
 
+" Lightline - improved status line
+Plugin 'itchyny/lightline.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -70,5 +73,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" - - - - Lightline setup
+if !has('gui_running')
+	  set t_Co=256
+endif
+
+
 
 

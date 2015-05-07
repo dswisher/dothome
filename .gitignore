@@ -3,3 +3,4 @@ home/.vim/bundle/Vundle.vim/
 home/.vim/bundle/nerdtree/
 home/.vim/bundle/ctrlp.vim/
 home/.vim/bundle/syntastic/
+home/.vim/bundle/lightline.vim/
