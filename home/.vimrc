@@ -55,6 +55,8 @@ set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
 
+set tags=./tags;/		" look in current and all parent directories for tags file
+
 " - - - - NerdTree Setup
 map <C-n> :NERDTreeToggle<CR>
 
