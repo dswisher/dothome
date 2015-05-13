@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mono ~/git/kurdle/src/Kurdle/bin/Debug/Kurdle.exe
+mono ~/git/kurdle/src/Kurdle/bin/Debug/Kurdle.exe $@
 
