@@ -39,6 +39,7 @@ link)
 	dolink ".screenrc"
 	dolink ".vimrc"
 	dolink ".vim"
+	dolink ".custom"
 ;;
 
 update)
