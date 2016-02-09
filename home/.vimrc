@@ -30,12 +30,12 @@ filetype off
 
 " - - - - - - 
 " Set up the display: reverse video, rather large display
-highlight Normal guibg=black guifg=white
-set guifont=consolas\ 12
+"highlight Normal guibg=black guifg=white
+"set guifont=consolas\ 12
 
 syntax on               " syntax coloring is very cool...turn it on...
 " syntax sync fromstart
-
+colo evening
 
 set autoindent          " always set autoindenting on
 set hidden              " keep hidden buffers
