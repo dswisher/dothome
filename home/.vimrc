@@ -55,6 +55,8 @@ set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
 
+autocmd FileType sh setlocal shiftwidth=2 tabstop=2
+
 "set tags=./tags;/		" look in current and all parent directories for tags file
 
 " - - - - NerdTree Setup
