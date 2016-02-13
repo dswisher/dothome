@@ -70,6 +70,7 @@ map ,b :BufExplorerHorizontalSplit<CR>
 " - - - - NerdTree Setup
 "map <C-n> :NERDTreeToggle<CR>
 map ,t :NERDTreeToggle<CR>
+map ,f :NERDTreeFind<CR>
 
 " - - - - CtrlP Setup
 "let g:ctrlp_custom_ignore = {
