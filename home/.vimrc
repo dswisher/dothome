@@ -7,17 +7,18 @@
 set nocompatible        " don't try to be compatible with vi
 filetype off
 
-"set rtp+=~/.vim/bundle/Vundle.vim/
-"call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle, required
-"Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " Nerdtree - file explorer - https://github.com/scrooloose/nerdtree
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " CtrlP - fuzzy file/buffer finder - https://github.com/kien/ctrlp.vim
 "Plugin 'kien/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 
 " Syntastic - syntax checker - https://github.com/scrooloose/syntastic
 "Plugin 'scrooloose/syntastic'
@@ -25,8 +26,12 @@ filetype off
 " Lightline - improved status line
 "Plugin 'itchyny/lightline.vim'
 
-"call vundle#end()            " required
-"filetype plugin indent on    " required
+" Bufexplorer
+Plugin 'jlanzarotta/bufexplorer'
+"Bundle 'jlanzarotta/bufexplorer'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " - - - - - - 
 " Set up the display: reverse video, rather large display
@@ -59,8 +64,12 @@ autocmd FileType sh setlocal shiftwidth=2 tabstop=2
 
 "set tags=./tags;/		" look in current and all parent directories for tags file
 
+" - - - - BufExplorer Setup
+map ,b :BufExplorerHorizontalSplit<CR>
+
 " - - - - NerdTree Setup
 "map <C-n> :NERDTreeToggle<CR>
+map ,t :NERDTreeToggle<CR>
 
 " - - - - CtrlP Setup
 "let g:ctrlp_custom_ignore = {
