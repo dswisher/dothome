@@ -121,10 +121,11 @@ fi
 
 # Running a spark app targeted to another node requires SPARK_HOME to be defined; the value does not matter
 # export SPARK_HOME=~/Tools/spark-1.6.0-bin-hadoop2.6
-# export PATH=$PATH:$SPARK_HOME/bin:.
+export SPARK_HOME=~/extra/SPARK/spark-1.6.0
+# export PATH=$PATH:$SPARK_HOME/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # Add some fun stuff to the path
-export PATH=$PATH:.
+# export PATH=$PATH:.
 
