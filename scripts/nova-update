@@ -1,0 +1,35 @@
+#!/bin/bash
+
+CREDS_FILE=~/.aws/credentials
+
+# Make sure the creds file exists; rely on user to create it the first time (for now)
+if [ ! -f $CREDS_FILE ]; then
+	echo "Credentials file not found - please create it: $CREDS_FILE."
+	exit 1
+fi
+
+# The creds should be on the clipboard; save them to /tmp
+xclip -selection clipboard -o > /tmp/nova-creds
+
+# Parse the file into the bits we need
+mapfile -t < /tmp/nova-creds
+KEY_ID=${MAPFILE[2]}
+ACCESS_KEY=${MAPFILE[6]}
+SESSION=${MAPFILE[10]}
+
+# Sanity checks
+if [ -z "$KEY_ID" -o -z "$ACCESS_KEY" -o -z "$SESSION" -o "${MAPFILE[1]}" != "Access Key:" -o "${MAPFILE[5]}" != "Secret Key:" ]; then
+	echo "Clipboard does not seem to contain nova creds."
+	exit 1
+fi
+
+# Write the creds file
+(
+cat <<EOF
+[default]
+aws_access_key_id=$KEY_ID
+aws_secret_access_key=$ACCESS_KEY
+aws_session_token=$SESSION
+EOF
+) > $CREDS_FILE
+
