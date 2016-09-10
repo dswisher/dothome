@@ -1,0 +1,38 @@
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# echo "HELLO (from .bashrc)"
+
+set -o vi
+
+export PS1="\u@\h:\W\$ "
+
+export RIVEN_HOME=/Users/doug/git/riven
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/doug/Dropbox/Licenses/Myst-ec37cd947caf.json
+
+export VENV_DIR=~/virtualenvs
+source ~/git/dothome/myvirtualenv.sh
+
+export ANDROID_HOME=/Users/doug/Library/Android/sdk
+
+# For a Mac
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# On Mac, show pretty colors
+#if [ $TERM == "xterm-256color" ]; then
+#	export TERM=xterm
+#fi
+
+export CLICOLOR=1
+
+# Add local bin directory (if it exists) to path
+if [ -d $HOME/bin ]; then
+	export PATH=$HOME/bin:$PATH
+fi
+
+[ -s "/Users/doug/.dnx/dnvm/dnvm.sh" ] && . "/Users/doug/.dnx/dnvm/dnvm.sh" # Load dnvm
+

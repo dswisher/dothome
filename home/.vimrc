@@ -40,7 +40,7 @@ filetype plugin indent on    " required
 
 syntax on               " syntax coloring is very cool...turn it on...
 " syntax sync fromstart
-colo evening
+colo default
 
 set autoindent          " always set autoindenting on
 set hidden              " keep hidden buffers
