@@ -29,3 +29,18 @@ To set up my version, add the following two lines to your .bashrc:
     export VENV_DIR=~/virtualenvs
     source ~/git/dothome/myvirtualenv.sh
 
+## TODO
+
+### Include .bashrc and .profile
+
+Look at some good examples:
+* [webpro](https://github.com/webpro/awesome-dotfiles) - list of "Awesome dotfiles"
+* [axsuul](https://github.com/axsuul/dotfiles/tree/master/home) - nicely breaks out aliases and whatnot
+* [mathiasbynens](https://github.com/mathiasbynens/dotfiles) - great instructions for git-free install
+* [catalin](https://github.com/alrra/dotfiles) - handles both MacOS and Ubuntu
+
+### Support git-free install
+
+See [mathiasbynens](https://github.com/mathiasbynens/dotfiles).
+
+
