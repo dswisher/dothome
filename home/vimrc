@@ -42,12 +42,13 @@ syntax on               " syntax coloring is very cool...turn it on...
 colo default
 
 set autoindent          " always set autoindenting on
+set expandtab           " spaces instead of tabs
 set hidden              " keep hidden buffers
 set incsearch           " show search progress
 set laststatus=2        " always show a status line
 set makeprg=xbuild      " doing mono development by default
 set ruler               " show line,column in status line
-" set scrolloff=1         " keep a couple of lines above/below cursor
+set scrolloff=1         " keep a couple of lines above/below cursor
 set shiftround          " round indent when using > and <
 set shiftwidth=4        " when indenting, use 4 spaces
 set shortmess=a         " abbreviate messages to get rid of [hit return] prompts
@@ -59,7 +60,11 @@ set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
 
+" set up tabs in shell files
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2
+
+" do not automatically add comments to new lines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "set tags=./tags;/		" look in current and all parent directories for tags file
 
