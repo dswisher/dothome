@@ -14,32 +14,32 @@ echoGreen() { echo -e "${green}$1${reset}"; }
 echoYellow() { echo -e "${yellow}$1${reset}"; }
 
 dolink() {
-	echo "Linking: ~/$1 -> $DIR/$1"
+	echo "Linking: ~/.$1 -> $DIR/$1"
 
 	# If file exists (not a symlink), make a backup of the file
-	if [ -e ~/$1 ] || [ -h ~/$1 ]
+	if [ -e ~/.$1 ] || [ -h ~/.$1 ]
 	then
-		if [ ! -h ~/$1 ]
+		if [ ! -h ~/.$1 ]
 		then
-			echo "Saving ~/$1 to ~/$1.SAVE"
-			mv ~/$1 ~/$1.SAVE
+			echo "Saving ~/.$1 to ~/.$1.SAVE"
+			mv ~/.$1 ~/.$1.SAVE
 		else
-			rm ~/$1
+			rm ~/.$1
 		fi
 	fi
 
-	ln -s $DIR/home/$1 ~/$1
+	ln -s $DIR/home/$1 ~/.$1
 }
 
 
 case "$1" in
 link)
-	dolink ".gvimrc"
-	dolink ".inputrc"
-	dolink ".screenrc"
-	dolink ".vimrc"
-	dolink ".vim"
-	dolink ".custom"
+	dolink "gvimrc"
+	dolink "inputrc"
+	dolink "screenrc"
+	dolink "vimrc"
+	dolink "vim"
+	dolink "zshrc"
 ;;
 
 update)

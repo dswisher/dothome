@@ -26,9 +26,8 @@ Plugin 'scrooloose/nerdtree'
 " Lightline - improved status line
 "Plugin 'itchyny/lightline.vim'
 
-" Bufexplorer
+" Bufexplorer - https://github.com/jlanzarotta/bufexplorer
 Plugin 'jlanzarotta/bufexplorer'
-"Bundle 'jlanzarotta/bufexplorer'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
