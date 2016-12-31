@@ -1,12 +1,42 @@
-# Lines configured by zsh-newuser-install
+
+# Based on https://dougblack.io/words/zsh-vi-mode.html
+# and http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
+
+# Set up history file
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/swish/.zshrc'
 
-autoload -Uz compinit
-compinit
+# Set vi command-line editing mode
+bindkey -v
+
+#function zle-line-init zle-keymap-select {
+#    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+#    # RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_custom_status) $EPS1"
+#    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#    zle reset-prompt
+#}
+
+#zle -N zle-line-init
+#zle -N zle-keymap-select
+#export KEYTIMEOUT=1
+
+# Clear LSCOLORS
+unset LSCOLORS
+
+# Make directories more visible on a dark background
+export CLICOLOR=1
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+# try to make git happy with the editor
+export EDITOR=/usr/bin/vim
+
+
+# TODO - figure out this bit
+# The following lines were added by compinstall
+# zstyle :compinstall filename '$HOME/.zshrc'
+
+# autoload -Uz compinit
+# compinit
 # End of lines added by compinstall
+
