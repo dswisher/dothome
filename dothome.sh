@@ -37,6 +37,7 @@ link)
 	dolink "gvimrc"
 	dolink "inputrc"
 	dolink "screenrc"
+	dolink "tmux.conf"
 	dolink "vimrc"
 	dolink "vim"
 	dolink "zshrc"
