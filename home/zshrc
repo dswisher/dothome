@@ -1,4 +1,9 @@
 
+if [ -f /apollo/env/envImprovement/var/zshrc ]; then
+    source /apollo/env/envImprovement/var/zshrc
+    alias vi='vim'
+fi
+
 # Based on https://dougblack.io/words/zsh-vi-mode.html
 # and http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
 
