@@ -1,7 +1,6 @@
 
-if [ -f /apollo/env/envImprovement/var/zshrc ]; then
-    source /apollo/env/envImprovement/var/zshrc
-    alias vi='vim'
+if [ -e .zshrc-local-pre ]; then
+    source .zshrc-local-pre
 fi
 
 # Based on https://dougblack.io/words/zsh-vi-mode.html
@@ -44,4 +43,8 @@ export EDITOR=/usr/bin/vim
 # autoload -Uz compinit
 # compinit
 # End of lines added by compinstall
+
+if [ -e .zshrc-local-post ]; then
+    source .zshrc-local-post
+fi
 
