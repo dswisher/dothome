@@ -35,6 +35,9 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 # try to make git happy with the editor
 export EDITOR=/usr/bin/vim
 
+# my virtualenv wrapper
+export VENV_DIR=~/VirtualEnvs
+source ~/git/dothome/myvirtualenv.sh
 
 # TODO - figure out this bit
 # The following lines were added by compinstall
@@ -43,6 +46,9 @@ export EDITOR=/usr/bin/vim
 # autoload -Uz compinit
 # compinit
 # End of lines added by compinstall
+
+# Put local bin in path
+export PATH=$PATH:~/bin
 
 if [ -e .zshrc-local-post ]; then
     source .zshrc-local-post
