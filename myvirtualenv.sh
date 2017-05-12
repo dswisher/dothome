@@ -2,7 +2,11 @@
 function mkvirtualenv {
 	typeset env_name="$1"
 	(
-		cd $VENV_DIR && virtualenv $env_name
+    if [ -f ~/.local/bin/virtualenv ]; then
+      cd $VENV_DIR && ~/.local/bin/virtualenv $env_name
+    else
+      cd $VENV_DIR && virtualenv $env_name
+    fi
 	)
 	workon $env_name
 }

@@ -48,9 +48,14 @@ source ~/git/dothome/myvirtualenv.sh
 # End of lines added by compinstall
 
 # Put local bin in path
-export PATH=$PATH:~/bin
+export PATH="~/bin:$PATH"
 
 if [ -e .zshrc-local-post ]; then
     source .zshrc-local-post
 fi
 
+# pyenv support
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+eval "$(pyenv init -)"
