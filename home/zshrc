@@ -54,8 +54,10 @@ if [ -e .zshrc-local-post ]; then
     source .zshrc-local-post
 fi
 
-# pyenv support
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# pyenv support (if installed)
+if pyenv_loc="$(type -p "pyenv")" && [ ! -z "$pyenv_loc" ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
 
-eval "$(pyenv init -)"
+    eval "$(pyenv init -)"
+fi
