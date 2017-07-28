@@ -1,3 +1,4 @@
 Vundle.vim
 bufexplorer/
 nerdtree/
+vim-go/

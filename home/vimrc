@@ -29,6 +29,9 @@ Plugin 'scrooloose/nerdtree'
 " Bufexplorer - https://github.com/jlanzarotta/bufexplorer
 Plugin 'jlanzarotta/bufexplorer'
 
+" Vim-go
+Plugin 'fatih/vim-go'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 

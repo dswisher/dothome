@@ -35,6 +35,11 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 # try to make git happy with the editor
 export EDITOR=/usr/bin/vim
 
+# playing with GO; this is probably wrong...
+if [ -d /home/swish/git/waiig ]; then
+    export GOPATH=/home/swish/git/waiig
+fi
+
 # my virtualenv wrapper
 export VENV_DIR=~/VirtualEnvs
 source ~/git/dothome/myvirtualenv.sh
