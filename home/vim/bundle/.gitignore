@@ -2,3 +2,4 @@ Vundle.vim
 bufexplorer/
 nerdtree/
 vim-go/
+ctrlp.vim/

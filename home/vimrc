@@ -10,39 +10,29 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Core plugins
+Plugin 'gmarik/Vundle.vim'          " package management
 
-" Nerdtree - file explorer - https://github.com/scrooloose/nerdtree
-Plugin 'scrooloose/nerdtree'
-
-" CtrlP - fuzzy file/buffer finder - https://github.com/kien/ctrlp.vim
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'ctrlpvim/ctrlp.vim'
+" Main plugins
+Plugin 'scrooloose/nerdtree'        " file explorer
+Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 
 " Syntastic - syntax checker - https://github.com/scrooloose/syntastic
 "Plugin 'scrooloose/syntastic'
 
-" Lightline - improved status line
-"Plugin 'itchyny/lightline.vim'
+" Experimental
+Plugin 'ctrlpvim/ctrlp.vim'     " fuzzy file finder
+" Plugin 'bling/vim-airline'      " fancy status bar
 
-" Bufexplorer - https://github.com/jlanzarotta/bufexplorer
-Plugin 'jlanzarotta/bufexplorer'
-
-" Vim-go
-Plugin 'fatih/vim-go'
+" Language-specific
+" Plugin 'fatih/vim-go'           " Support for go
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" - - - - - - 
-" Set up the display: reverse video, rather large display
-"highlight Normal guibg=black guifg=white
-"set guifont=consolas\ 12
-
 syntax on               " syntax coloring is very cool...turn it on...
 " syntax sync fromstart
-colo default
+colorscheme default
 
 set autoindent          " always set autoindenting on
 set expandtab           " spaces instead of tabs
@@ -62,6 +52,10 @@ set visualbell          " flash screen instead of beeping
 set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 " set up tabs in shell files
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2
