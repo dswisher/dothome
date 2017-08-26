@@ -38,6 +38,7 @@ Look at some good examples:
 * [axsuul](https://github.com/axsuul/dotfiles/tree/master/home) - nicely breaks out aliases and whatnot
 * [mathiasbynens](https://github.com/mathiasbynens/dotfiles) - great instructions for git-free install
 * [catalin](https://github.com/alrra/dotfiles) - handles both MacOS and Ubuntu
+* [netherdrake](https://github.com/Netherdrake/dotfiles) - large vimrc file; [minutevimtricks](https://www.youtube.com/channel/UCpdsZ1n09mwrbUGmU7lqnqA) on youtube
 
 Useful tidbits that should be incorporated
 * [prompt](http://jakemccrary.com/blog/2015/05/03/put-the-last-commands-run-time-in-your-bash-prompt/) - last command's run time, etc in prompt.

@@ -21,8 +21,12 @@ Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 "Plugin 'scrooloose/syntastic'
 
 " Experimental
-Plugin 'ctrlpvim/ctrlp.vim'     " fuzzy file finder
-" Plugin 'bling/vim-airline'      " fancy status bar
+Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
+Plugin 'scrooloose/syntastic'
+
+" airline does not work right in WSL
+" Plugin 'vim-airline/vim-airline'    " fancy status bar
+" Plugin 'vim-airline/vim-airline-themes'
 
 " Language-specific
 " Plugin 'fatih/vim-go'           " Support for go
@@ -65,32 +69,30 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "set tags=./tags;/		" look in current and all parent directories for tags file
 
+let mapleader=","
+
 " - - - - BufExplorer Setup
-map ,b :BufExplorerHorizontalSplit<CR>
+let g:bufExplorerDisableDefaultKeyMapping=1
+nmap <leader>b :BufExplorerHorizontalSplit<CR>
 
 " - - - - NerdTree Setup
 "map <C-n> :NERDTreeToggle<CR>
-map ,t :NERDTreeToggle<CR>
-map ,f :NERDTreeFind<CR>
+nmap <leader>t :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 
 " - - - - CtrlP Setup
+nmap <leader>p :CtrlP<CR>
 "let g:ctrlp_custom_ignore = {
 "  \ 'dir':  '\v[\/](\.(git|hg|svn)|(obj|bin))$',
 "  \ 'file': '\v\.(exe|so|dll)$'
 "  \ }
 
 " - - - - Syntastic setup
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+let g:syntastic_enable_signs = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting = 0
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+nmap <leader>c :SyntasticCheck<CR>
 
-" - - - - Lightline setup
-"if !has('gui_running')
-"	  set t_Co=256
-"endif
+
 
