@@ -16,13 +16,10 @@ Plugin 'gmarik/Vundle.vim'          " package management
 " Main plugins
 Plugin 'scrooloose/nerdtree'        " file explorer
 Plugin 'jlanzarotta/bufexplorer'    " better buffer list
-
-" Syntastic - syntax checker - https://github.com/scrooloose/syntastic
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Experimental
 Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
-Plugin 'scrooloose/syntastic'
 
 " airline does not work right in WSL
 " Plugin 'vim-airline/vim-airline'    " fancy status bar
@@ -30,6 +27,7 @@ Plugin 'scrooloose/syntastic'
 
 " Language-specific
 " Plugin 'fatih/vim-go'           " Support for go
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -92,7 +90,8 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
 
-nmap <leader>c :SyntasticCheck<CR>
+let g:syntastic_python_checkers = ['flake8']
 
-
+nmap <leader>ss :SyntasticCheck<CR>
+nmap <leader>sc :SyntasticReset<CR>
 
