@@ -79,7 +79,7 @@ nmap <leader>t :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
 
 " - - - - CtrlP Setup
-nmap <leader>p :CtrlP<CR>
+nmap <leader>p :CtrlPMRU<CR>
 "let g:ctrlp_custom_ignore = {
 "  \ 'dir':  '\v[\/](\.(git|hg|svn)|(obj|bin))$',
 "  \ 'file': '\v\.(exe|so|dll)$'
