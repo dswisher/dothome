@@ -70,3 +70,9 @@ if [ -d $HOME/.pyenv ]; then
         eval "$(pyenv virtualenv-init -)"
     fi
 fi
+
+# jenv support (if installed)
+if [ -d $HOME/.jenv ]; then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+fi
