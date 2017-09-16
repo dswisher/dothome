@@ -4,3 +4,6 @@ nerdtree/
 vim-go/
 ctrlp.vim/
 syntastic/
+vim-commentary/
+vim-repeat/
+vim-surround/

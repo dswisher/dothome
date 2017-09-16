@@ -20,6 +20,9 @@ Plugin 'scrooloose/syntastic'
 
 " Experimental
 Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
+Plugin 'tpope/vim-surround'         " surround
+Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
+Plugin 'tpope/vim-commentary'       " support for commenting things out
 
 " airline does not work right in WSL
 " Plugin 'vim-airline/vim-airline'    " fancy status bar
@@ -27,6 +30,9 @@ Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
 
 " Language-specific
 " Plugin 'fatih/vim-go'           " Support for go
+
+" Python
+" Plugin 'tmhedberg/SimpylFold'       " folding
 
 
 call vundle#end()            " required
@@ -55,9 +61,12 @@ set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
 
+set number              " show line numbers
+set relativenumber      " ...and make 'em relative
+
 " Enable folding
-set foldmethod=indent
-set foldlevel=99
+" set foldmethod=indent
+" set foldlevel=99
 
 " set up tabs in shell files
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2
@@ -77,6 +86,8 @@ nmap <leader>b :BufExplorerHorizontalSplit<CR>
 "map <C-n> :NERDTreeToggle<CR>
 nmap <leader>t :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
+
+let NERDTreeIgnore=['\.pyc$']   " ignore files in NERDTree
 
 " - - - - CtrlP Setup
 nmap <leader>p :CtrlPMRU<CR>
