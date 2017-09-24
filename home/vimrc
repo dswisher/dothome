@@ -23,6 +23,8 @@ Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
 Plugin 'tpope/vim-surround'         " surround
 Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
 Plugin 'tpope/vim-commentary'       " support for commenting things out
+Plugin 'mileszs/ack.vim'            " search using Ack
+Plugin 'ludovicchabant/vim-gutentags'   " better tags support?
 
 " airline does not work right in WSL
 " Plugin 'vim-airline/vim-airline'    " fancy status bar
@@ -74,7 +76,7 @@ autocmd FileType sh setlocal shiftwidth=2 tabstop=2
 " do not automatically add comments to new lines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"set tags=./tags;/		" look in current and all parent directories for tags file
+set tags=./tags;/		" look in current and all parent directories for tags file
 
 let mapleader=","
 

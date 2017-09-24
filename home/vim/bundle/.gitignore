@@ -7,3 +7,5 @@ syntastic/
 vim-commentary/
 vim-repeat/
 vim-surround/
+ack.vim/
+vim-gutentags/
