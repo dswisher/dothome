@@ -10,3 +10,4 @@ vim-surround/
 ack.vim/
 vim-gutentags/
 supertab/
+vim-bracketed-paste/
