@@ -25,8 +25,10 @@ Plugin 'tpope/vim-repeat'           " repeat support for surround and other plug
 Plugin 'tpope/vim-commentary'       " support for commenting things out
 Plugin 'mileszs/ack.vim'            " search using Ack
 Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
-Plugin 'ervandew/supertab'          " tab completion
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
+
+" Remapping the tab key seems to mess me up more often than it helps
+" Plugin 'ervandew/supertab'          " tab completion
 
 " airline does not work right in WSL
 " Plugin 'vim-airline/vim-airline'    " fancy status bar
