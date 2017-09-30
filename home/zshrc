@@ -14,6 +14,9 @@ SAVEHIST=1000
 # Set vi command-line editing mode
 bindkey -v
 
+# Have info use vi key bindings; an alias seems to be the only way
+alias info='info --vi-keys'
+
 #function zle-line-init zle-keymap-select {
 #    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
 #    # RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$(git_custom_status) $EPS1"
