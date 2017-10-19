@@ -3,11 +3,18 @@
 # Grab the location of this script
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-# colors
-red='\e[0;31m'
-green='\e[0;32m'
-yellow='\e[0;33m'
-reset='\e[0m'
+# colors (except on Mac)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  red=''
+  green=''
+  yellow=''
+  reset=''
+else
+  red='\e[0;31m'
+  green='\e[0;32m'
+  yellow='\e[0;33m'
+  reset='\e[0m'
+fi
 
 echoRed() { echo -e "${red}$1${reset}"; }
 echoGreen() { echo -e "${green}$1${reset}"; }
@@ -36,6 +43,7 @@ case "$1" in
 link)
 	dolink "ctags"
 	dolink "gvimrc"
+	dolink "ideavimrc"
 	dolink "inputrc"
 	dolink "screenrc"
 	dolink "tmux.conf"

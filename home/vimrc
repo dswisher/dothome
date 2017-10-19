@@ -20,10 +20,10 @@ Plugin 'scrooloose/syntastic'
 
 " Experimental
 Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
-Plugin 'tpope/vim-surround'         " surround
-Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
-Plugin 'tpope/vim-commentary'       " support for commenting things out
-Plugin 'mileszs/ack.vim'            " search using Ack
+" Plugin 'tpope/vim-surround'         " surround
+" Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
+" Plugin 'tpope/vim-commentary'       " support for commenting things out
+" Plugin 'mileszs/ack.vim'            " search using Ack
 Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 

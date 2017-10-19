@@ -1,0 +1,15 @@
+
+" From https://github.com/rekendahl/dotfiles/blob/master/.ideavimrc#L155
+" Set leader to ,
+" Note: This line MUST come before any <leader> mappings
+let mapleader=','
+let maplocalleader = ' '
+
+" From https://github.com/beloglazov/vimrc/blob/master/.ideavimrc
+nnoremap / :action Find<CR>
+nnoremap n :action FindNext<CR>
+nnoremap N :action FindPrevious<CR>
+
+" My own fun, for actions: http://keithlea.com/idea-actions/
+nnoremap <leader>S :action SelectIn<CR>
+
