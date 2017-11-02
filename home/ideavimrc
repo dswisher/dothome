@@ -11,5 +11,7 @@ nnoremap n :action FindNext<CR>
 nnoremap N :action FindPrevious<CR>
 
 " My own fun, for actions: http://keithlea.com/idea-actions/
+nnoremap <leader>e :action GotoNextError<CR>
 nnoremap <leader>S :action SelectIn<CR>
+nnoremap <leader>U :action FindUsages<CR>
 
