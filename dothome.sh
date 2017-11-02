@@ -41,6 +41,7 @@ dolink() {
 
 case "$1" in
 link)
+	dolink "ackrc"
 	dolink "ctags"
 	dolink "gvimrc"
 	dolink "ideavimrc"
