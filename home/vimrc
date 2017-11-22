@@ -19,6 +19,7 @@ Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 Plugin 'scrooloose/syntastic'
 
 " Experimental
+Plugin 'posva/vim-vue'              " vuejs syntax highlighting
 Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
 " Plugin 'tpope/vim-surround'         " surround
 " Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
