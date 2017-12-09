@@ -19,7 +19,7 @@ Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 Plugin 'scrooloose/syntastic'
 
 " Experimental
-Plugin 'posva/vim-vue'              " vuejs syntax highlighting
+" Plugin 'posva/vim-vue'              " vuejs syntax highlighting
 Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
 " Plugin 'tpope/vim-surround'         " surround
 " Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
@@ -68,6 +68,8 @@ set nowrap              " don't wrap lines
 set wrapscan            " wrap searches around end of file
 " set wildmenu
 
+" set t_BE=               " disable bracketed paste in iterm2
+
 set number              " show line numbers
 set relativenumber      " ...and make 'em relative
 
@@ -109,6 +111,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
 
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_post_args="--max-line-length=120"
+
+let g:syntastic_html_checkers=['']
 
 nmap <leader>ss :SyntasticCheck<CR>
 nmap <leader>sc :SyntasticReset<CR>
