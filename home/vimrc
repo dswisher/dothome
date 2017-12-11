@@ -27,6 +27,7 @@ Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
 " Plugin 'mileszs/ack.vim'            " search using Ack
 Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
+Plugin 'maxbrunsfeld/vim-yankstack'         " paste older text
 
 " Remapping the tab key seems to mess me up more often than it helps
 " Plugin 'ervandew/supertab'          " tab completion
@@ -117,4 +118,8 @@ let g:syntastic_html_checkers=['']
 
 nmap <leader>ss :SyntasticCheck<CR>
 nmap <leader>sc :SyntasticReset<CR>
+
+" - - - - Yankstack mappings
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
