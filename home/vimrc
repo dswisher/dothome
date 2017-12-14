@@ -118,8 +118,9 @@ let g:syntastic_python_flake8_post_args="--max-line-length=140"
 
 let g:syntastic_html_checkers=['']
 
-nmap <leader>ss :SyntasticCheck<CR>
 nmap <leader>sc :SyntasticReset<CR>
+nmap <leader>sn :lnext<CR>
+nmap <leader>ss :SyntasticCheck<CR>
 
 " - - - - Yankstack mappings
 nmap <leader>p <Plug>yankstack_substitute_older_paste
