@@ -40,6 +40,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'         " paste older text
 " Plugin 'fatih/vim-go'           " Support for go
 
 " Python
+" Always folds everything up on file open; ick.
 " Plugin 'tmhedberg/SimpylFold'       " folding
 
 
