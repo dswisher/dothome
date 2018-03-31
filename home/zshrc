@@ -42,13 +42,15 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 export EDITOR=/usr/bin/vim
 
 # playing with GO; this is probably wrong...
-if [ -d /home/swish/git/waiig ]; then
-    export GOPATH=/home/swish/git/waiig
+if [ -d $HOME/git/waiig ]; then
+    export GOPATH=$HOME/git/waiig
 fi
 
 # my virtualenv wrapper
-export VENV_DIR=~/VirtualEnvs
-source ~/git/dothome/myvirtualenv.sh
+if [ -f $HOME/git/dothome/myvirtualenv.sh ]; then
+    export VENV_DIR=~/VirtualEnvs
+    source $HOME/git/dothome/myvirtualenv.sh
+fi
 
 # TODO - figure out this bit
 # The following lines were added by compinstall
