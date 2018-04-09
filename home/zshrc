@@ -60,12 +60,12 @@ fi
 # compinit
 # End of lines added by compinstall
 
-# Put local bin in path
-export PATH="$HOME/bin:$PATH"
-
 if [ -e .zshrc-local-post ]; then
     source .zshrc-local-post
 fi
+
+# Put local bin in path
+export PATH="$HOME/bin:$PATH"
 
 # pyenv support (if installed)
 if [ -d $HOME/.pyenv ]; then
