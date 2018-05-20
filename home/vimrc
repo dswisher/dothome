@@ -28,7 +28,7 @@ Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
 " Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 Plugin 'maxbrunsfeld/vim-yankstack'         " paste older text
-Plugin 'davidhalter/jedi-vim'               " Python code completion, via Jedi
+" Plugin 'davidhalter/jedi-vim'               " Python code completion, via Jedi
 
 " Remapping the tab key seems to mess me up more often than it helps
 " Plugin 'ervandew/supertab'          " tab completion
@@ -119,7 +119,7 @@ nmap <leader>f :NERDTreeFind<CR>
 let NERDTreeIgnore=['\.pyc$']   " ignore files in NERDTree
 
 " - - - - jedi-vim Setup
-let g:jedi#popup_on_dot = 0
+" let g:jedi#popup_on_dot = 0
 
 " - - - - CtrlP Setup
 nmap <leader>p :CtrlPMRU<CR>
