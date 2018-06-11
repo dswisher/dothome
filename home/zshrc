@@ -11,6 +11,8 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+setopt hist_ignore_dups # Do not write events to history that are duplicates of previous events
+
 # Set vi command-line editing mode
 bindkey -v
 
