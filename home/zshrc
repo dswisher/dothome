@@ -41,7 +41,9 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # try to make git happy with the editor
-if [ -f /usr/local/bin/vim ]; then
+if [ -f /apollo/env/envImprovement/bin/vim ]; then
+    export EDITOR=/apollo/env/envImprovement/bin/vim
+elif [ -f /usr/local/bin/vim ]; then
     export EDITOR=/usr/local/bin/vim
 else
     export EDITOR=/usr/bin/vim
