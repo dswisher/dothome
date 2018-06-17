@@ -47,6 +47,7 @@ link)
 	dolink "ideavimrc"
 	dolink "inputrc"
 	dolink "screenrc"
+	dolink "tigrc"
 	dolink "tmux.conf"
 	dolink "vimrc"
 	dolink "vim"
