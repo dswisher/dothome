@@ -29,6 +29,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 " Plugin 'maxbrunsfeld/vim-yankstack'         " paste older text
 " Plugin 'davidhalter/jedi-vim'               " Python code completion, via Jedi
+Plugin 'Glench/Vim-Jinja2-Syntax'   " Jinja2 syntax
 
 " Remapping the tab key seems to mess me up more often than it helps
 " Plugin 'ervandew/supertab'          " tab completion
