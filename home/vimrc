@@ -39,7 +39,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'   " Jinja2 syntax
 " Plugin 'vim-airline/vim-airline-themes'
 
 " Language-specific
-" Plugin 'fatih/vim-go'           " Support for go
+Plugin 'fatih/vim-go'           " Support for go
 
 " Python
 " Always folds everything up on file open; ick.
@@ -148,4 +148,11 @@ nmap <leader>ss :SyntasticCheck<CR>
 " - - - - Yankstack mappings
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" - - - - vim-go setup
+let g:go_fmt_fail_silently = 1
+
+" let g:go_fmt_options = {
+"     \ 'goimports': '-local mycompany.com',
+"     \ }
 

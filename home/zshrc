@@ -53,8 +53,9 @@ fi
 alias vi=$EDITOR
 
 # playing with GO; this is probably wrong...
-if [ -d $HOME/git/waiig ]; then
-    export GOPATH=$HOME/git/waiig
+if [ -d $HOME/GO ]; then
+    export GOPATH=$HOME/GO
+    export PATH="$PATH:$GOPATH/bin"
 fi
 
 # my virtualenv wrapper
