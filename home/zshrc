@@ -33,14 +33,14 @@ alias less='less -R'
 #zle -N zle-keymap-select
 #export KEYTIMEOUT=1
 
-# Clear LSCOLORS
+# clear LSCOLORS
 unset LSCOLORS
 
-# Make directories more visible on a dark background
+# make directories more visible on a dark background
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
-# try to make git happy with the editor
+# use vim whenever possible
 if [ -f /apollo/env/envImprovement/bin/vim ]; then
     export EDITOR=/apollo/env/envImprovement/bin/vim
 elif [ -f /usr/local/bin/vim ]; then
@@ -48,6 +48,8 @@ elif [ -f /usr/local/bin/vim ]; then
 else
     export EDITOR=/usr/bin/vim
 fi
+export VISUAL="$EDITOR"
+export GIT_EDITOR="$EDITOR"
 
 # make sure we use vim
 alias vi=$EDITOR
