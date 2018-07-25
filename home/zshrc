@@ -55,7 +55,7 @@ alias vi=$EDITOR
 # playing with GO; this is probably wrong...
 if [ -d $HOME/GO ]; then
     export GOPATH=$HOME/GO
-    export PATH="$PATH:$GOPATH/bin"
+    export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 fi
 
 # my virtualenv wrapper
