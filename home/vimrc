@@ -8,13 +8,14 @@ set nocompatible        " don't try to be compatible with vi
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim/
+" set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 
 " Core plugins
 Plugin 'gmarik/Vundle.vim'          " package management
 
 " Main plugins
-Plugin 'scrooloose/nerdtree'        " file explorer
+" Plugin 'scrooloose/nerdtree'        " file explorer
 Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 Plugin 'scrooloose/syntastic'
 
@@ -24,7 +25,7 @@ Plugin 'scrooloose/syntastic'
 " Plugin 'tpope/vim-surround'         " surround
 " Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
 " Plugin 'tpope/vim-commentary'       " support for commenting things out
-" Plugin 'mileszs/ack.vim'            " search using Ack
+Plugin 'mileszs/ack.vim'            " search using Ack
 " Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 " Plugin 'maxbrunsfeld/vim-yankstack'         " paste older text
@@ -113,11 +114,10 @@ let g:bufExplorerDisableDefaultKeyMapping=1
 nmap <leader>b :BufExplorerHorizontalSplit<CR>
 
 " - - - - NerdTree Setup
-"map <C-n> :NERDTreeToggle<CR>
-nmap <leader>t :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
+" nmap <leader>t :NERDTreeToggle<CR>
+" nmap <leader>f :NERDTreeFind<CR>
 
-let NERDTreeIgnore=['\.pyc$']   " ignore files in NERDTree
+" let NERDTreeIgnore=['\.pyc$']   " ignore files in NERDTree
 
 " - - - - jedi-vim Setup
 " let g:jedi#popup_on_dot = 0
@@ -146,8 +146,8 @@ nmap <leader>sn :lnext<CR>
 nmap <leader>ss :SyntasticCheck<CR>
 
 " - - - - Yankstack mappings
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+" nmap <leader>p <Plug>yankstack_substitute_older_paste
+" nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " - - - - vim-go setup
 " let g:go_fmt_fail_silently = 1
