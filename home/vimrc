@@ -21,7 +21,7 @@ Plugin 'scrooloose/syntastic'
 
 " Experimental
 " Plugin 'posva/vim-vue'              " vuejs syntax highlighting
-" Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
 " Plugin 'tpope/vim-surround'         " surround
 " Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
 " Plugin 'tpope/vim-commentary'       " support for commenting things out
@@ -123,7 +123,7 @@ nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
 
 " - - - - NerdTree Setup
 " nnoremap <leader>t :NERDTreeToggle<CR>
-" nnoremap <leader>f :NERDTreeFind<CR>
+" nnoremap <leader>f :NERDTreeFind<CR> <-- superseded by CtrlP mapping
 
 " let NERDTreeIgnore=['\.pyc$']   " ignore files in NERDTree
 
@@ -131,7 +131,7 @@ nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
 " let g:jedi#popup_on_dot = 0
 
 " - - - - CtrlP Setup
-nnoremap <leader>p :CtrlPMRU<CR>
+nnoremap <leader>f :CtrlP<CR>
 "let g:ctrlp_custom_ignore = {
 "  \ 'dir':  '\v[\/](\.(git|hg|svn)|(obj|bin))$',
 "  \ 'file': '\v\.(exe|so|dll)$'
@@ -167,6 +167,6 @@ let g:go_list_type = "locationlist"
 "     \ }
 
 " - - - - Custom Mappings
-nnoremap <leader>ev :split $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ve :split $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
 
