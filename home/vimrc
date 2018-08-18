@@ -131,6 +131,9 @@ nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
 " let g:jedi#popup_on_dot = 0
 
 " - - - - CtrlP Setup
+
+let g:ctrlp_by_filename = 1     " Start in filename mode by default
+
 nnoremap <leader>f :CtrlP<CR>
 "let g:ctrlp_custom_ignore = {
 "  \ 'dir':  '\v[\/](\.(git|hg|svn)|(obj|bin))$',
@@ -139,9 +142,11 @@ nnoremap <leader>f :CtrlP<CR>
 
 " - - - - Syntastic setup
 let g:syntastic_enable_signs = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
 let g:syntastic_always_populate_loc_list = 1    " can use :lnext and :lprev to move between errors
+let g:syntastic_auto_loc_list = 1
 
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_post_args="--max-line-length=175"
@@ -149,18 +154,20 @@ let g:syntastic_python_flake8_post_args="--max-line-length=175"
 let g:syntastic_html_checkers=['']
 let g:syntastic_asm_compiler=''
 
+let g:syntastic_go_checkers = [ 'gofmt' ]
+
 nnoremap <leader>sc :SyntasticReset<CR>
-nnoremap <leader>sn :lnext<CR>
+" nnoremap <leader>sn :lnext<CR>
 nnoremap <leader>ss :SyntasticCheck<CR>
 
 " - - - - vim-go setup
 " let g:go_fmt_fail_silently = 1
 let g:go_template_autocreate = 0
 
-" let g:go_fmt_autosave = 1
-let g:go_fmt_fail_silently = 0
+let g:go_fmt_autosave = 1
+let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
-let g:go_list_type = "locationlist"
+" let g:go_list_type = "locationlist"
 
 " let g:go_fmt_options = {
 "     \ 'goimports': '-local mycompany.com',
