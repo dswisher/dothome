@@ -106,6 +106,12 @@ augroup filetype_sh
     autocmd FileType sh setlocal shiftwidth=2 tabstop=2
 augroup end
 
+" file type: .json
+augroup filetype_json
+    autocmd!
+    autocmd FileType json setlocal foldmethod=syntax foldlevel=20
+augroup end
+
 " file type: ALL
 augroup filetype_all
     autocmd!
@@ -172,6 +178,10 @@ let g:go_fmt_command = "goimports"
 " let g:go_fmt_options = {
 "     \ 'goimports': '-local mycompany.com',
 "     \ }
+
+" - - - - netrw setup (built-in file browser)
+
+let g:netrw_list_hide = '.*\.swp$,.*\.pyc'
 
 " - - - - Custom Mappings
 nnoremap <leader>ve :split $MYVIMRC<cr>
