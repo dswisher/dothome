@@ -97,6 +97,8 @@ fi
 if [ -d $HOME/.jenv ]; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
+elif [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
+    export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 fi
 
 # Experimental stuff
