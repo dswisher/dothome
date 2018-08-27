@@ -140,6 +140,9 @@ nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
 
 let g:ctrlp_by_filename = 1     " Start in filename mode by default
 
+" When in a git folder, exclude files listed in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 nnoremap <leader>f :CtrlP<CR>
 "let g:ctrlp_custom_ignore = {
 "  \ 'dir':  '\v[\/](\.(git|hg|svn)|(obj|bin))$',
@@ -148,7 +151,7 @@ nnoremap <leader>f :CtrlP<CR>
 
 " - - - - Syntastic setup
 let g:syntastic_enable_signs = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_highlighting = 0
 let g:syntastic_always_populate_loc_list = 1    " can use :lnext and :lprev to move between errors
@@ -184,6 +187,8 @@ let g:go_fmt_command = "goimports"
 let g:netrw_list_hide = '.*\.swp$,.*\.pyc'
 
 " - - - - Custom Mappings
+nnoremap <leader>e :Explore<cr>
+
 nnoremap <leader>ve :split $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
 
