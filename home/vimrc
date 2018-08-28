@@ -112,6 +112,13 @@ augroup filetype_json
     autocmd FileType json setlocal foldmethod=syntax foldlevel=20
 augroup end
 
+" file type: .yaml
+augroup filetype_yaml
+    autocmd!
+    autocmd FileType yaml setlocal foldmethod=indent foldlevel=20
+augroup end
+
+
 " file type: ALL
 augroup filetype_all
     autocmd!
