@@ -172,6 +172,9 @@ let g:syntastic_asm_compiler=''
 
 let g:syntastic_go_checkers = [ 'gofmt' ]
 
+" Disable java
+let g:loaded_syntastic_java_javac_checker = 1
+
 nnoremap <leader>sc :SyntasticReset<CR>
 " nnoremap <leader>sn :lnext<CR>
 nnoremap <leader>ss :SyntasticCheck<CR>
