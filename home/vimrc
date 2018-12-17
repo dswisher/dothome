@@ -179,6 +179,8 @@ nnoremap <leader>sc :SyntasticReset<CR>
 " nnoremap <leader>sn :lnext<CR>
 nnoremap <leader>ss :SyntasticCheck<CR>
 
+let g:syntastic_ruby_mri_quiet_messages = { "regex": 'assigned but unused variable' }
+
 " - - - - vim-go setup
 " let g:go_fmt_fail_silently = 1
 let g:go_template_autocreate = 0
