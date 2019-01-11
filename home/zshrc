@@ -133,4 +133,5 @@ alias awsKiaraBI="aws-creds '082324551542' 'us-east-1'"
 alias awsKiaraGI="aws-creds '777731679079' 'us-east-1'"
 alias awsArch="aws-creds '092180355867' 'us-east-1'"
 alias awsSwish="aws-creds '516009746567' 'us-east-1'"
+alias awsSimbaGI="aws-creds '131735055993' 'us-east-1'"
 
