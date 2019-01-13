@@ -93,6 +93,11 @@ if [ -d $HOME/.pyenv ]; then
     fi
 fi
 
+# custom tools
+if [ -d $HOME/git/time-series/sitegen ]; then
+    alias kurdle=$HOME/git/time-series/sitegen/kurdle
+fi
+
 # build tools
 if [ -f /apollo/env/BrazilCLI/public-bin/brazil-build-tool-exec ]; then
     alias sam="brazil-build-tool-exec sam"
@@ -112,19 +117,6 @@ if [ -f /usr/bin/docker ]; then
     export DOCKER_HOST=tcp://127.0.0.1:2376;
     export DOCKER_TLS_VERIFY=1
 fi
-
-# Experimental stuff
-function up {
-    if [[ "$#" < 1 ]] ; then
-        cd ..
-    else
-        CDSTR=""
-        for i in {1..$1} ; do
-            CDSTR="../$CDSTR"
-        done
-        cd $CDSTR
-    fi
-}
 
 # A few aliases
 alias awsKiaraBD="aws-creds '306070047779' 'eu-west-1'"

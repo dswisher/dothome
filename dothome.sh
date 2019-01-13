@@ -43,6 +43,7 @@ case "$1" in
 link)
 	dolink "ackrc"
 	dolink "ctags"
+	dolink "flake8"
 	dolink "gvimrc"
 	dolink "ideavimrc"
 	dolink "inputrc"
