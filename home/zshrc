@@ -118,6 +118,11 @@ if [ -f /usr/bin/docker ]; then
     export DOCKER_TLS_VERIFY=1
 fi
 
+# Haskell stuff (mainly for pandoc experiment)
+if [ -d /Users/dsswishe/.local/bin ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
 # A few aliases
 alias awsKiaraBD="aws-creds '306070047779' 'eu-west-1'"
 alias awsKiaraGD="aws-creds '468125541434' 'eu-west-1'"

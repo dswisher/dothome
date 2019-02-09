@@ -18,7 +18,17 @@ Clone vundle (vim plugin manager) and install plugins:
 
 ## Misc
 
+### Pyenv
+
+To manage Python installs, use [pyenv](https://github.com/pyenv/pyenv).
+
+One thing to note on OSX: for some things, like matplotlib to work, use the following to install Python versions:
+
+    PYTHON_CONFIGURE_OPTS="--enable-framework CC=clang" pyenv install x.x.x
+
 ### Virtualenvwrapper
+
+**NOTE**: use pyenv, instead!
 
 I've written a simple virtualenv wrapper.
 If you can use the real [virtualenvwrapper](https://bitbucket.org/dhellmann/virtualenvwrapper),
