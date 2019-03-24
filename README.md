@@ -2,8 +2,9 @@
 
 Clone this repo to some location (anyplace except home directory)
 
-	cd ~
-	mkdir git
+    cd ~
+    mkdir git
+    cd git
     git clone git@github.com:dswisher/dothome.git
 
 Change into the directory and run:
@@ -15,6 +16,11 @@ Clone vundle (vim plugin manager) and install plugins:
 
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
+
+Switch to zsh:
+
+    sudo apt-get install zsh
+    chsh -s $(which zsh)
 
 ## Misc
 
