@@ -20,16 +20,18 @@ Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 Plugin 'scrooloose/syntastic'
 
 " Experimental
-" Plugin 'posva/vim-vue'              " vuejs syntax highlighting
-Plugin 'ctrlpvim/ctrlp.vim'         " fuzzy file finder
-" Plugin 'tpope/vim-surround'         " surround
-" Plugin 'tpope/vim-repeat'           " repeat support for surround and other plugins
-" Plugin 'tpope/vim-commentary'       " support for commenting things out
-Plugin 'mileszs/ack.vim'            " search using Ack
-" Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
+" Plugin 'ledger/vim-ledger'                  " support for ledger files
+" Plugin 'nathangrigg/vim-beancount'          " support for beancount files
+Plugin 'mileszs/ack.vim'                    " search using Ack
+Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
+Plugin 'HerringtonDarkholme/yats.vim'       " Typescript syntax highlighting
+" Plugin 'tpope/vim-surround'                 " surround
+" Plugin 'tpope/vim-repeat'                   " repeat support for surround and other plugins
+" Plugin 'tpope/vim-commentary'               " support for commenting things out
+" Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
 " Plugin 'davidhalter/jedi-vim'               " Python code completion, via Jedi
-Plugin 'Glench/Vim-Jinja2-Syntax'   " Jinja2 syntax
+" Plugin 'Glench/Vim-Jinja2-Syntax'           " Jinja2 syntax
 
 " Remapping the tab key seems to mess me up more often than it helps
 " Plugin 'ervandew/supertab'          " tab completion
@@ -97,7 +99,7 @@ set statusline +=\ %y
 
 " Enable folding
 " set foldmethod=indent
-" set foldlevel=99
+set foldlevel=99
 
 " file type: .sh
 augroup filetype_sh
