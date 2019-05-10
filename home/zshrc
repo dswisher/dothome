@@ -131,8 +131,12 @@ alias awsKiaraGI="aws-creds '777731679079' 'us-east-1'"
 alias awsArch="aws-creds '092180355867' 'us-east-1'"
 alias awsSwish="aws-creds '516009746567' 'us-east-1'"
 alias awsSimbaGI="aws-creds '131735055993' 'us-east-1'"
-alias awsBurn="aws-creds '350167053925' 'us-west-2'"
+alias awsBurn="aws-creds '242529512275' 'us-west-2'"
 alias awsImageBeta="aws-creds '704711834321' 'us-east-1'"
 alias awsImageGamma="aws-creds '701167551738' 'us-east-1'"
 alias awsImageProd="aws-creds '191419374162' 'us-east-1'"
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
