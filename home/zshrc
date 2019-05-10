@@ -104,11 +104,19 @@ if [ -f /apollo/env/BrazilCLI/public-bin/brazil-build-tool-exec ]; then
 fi
 
 # jenv support (if installed)
-if [ -d $HOME/.jenv ]; then
-    export PATH="$HOME/.jenv/bin:$PATH"
-    eval "$(jenv init -)"
-elif [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
+# if [ -d $HOME/.jenv ]; then
+#     export PATH="$HOME/.jenv/bin:$PATH"
+#     eval "$(jenv init -)"
+# elif [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
+if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
     export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+elif [ -f /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
+# OpenCCG goofiness
+if [ -d /Users/dsswishe/git/openccg ]; then
+    export OPENCCG_HOME=/Users/dsswishe/git/openccg
 fi
 
 # Docker stuff
