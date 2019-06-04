@@ -114,3 +114,5 @@ if [ "$HOST" = "C02YN3R5JG5H.local" ]; then
     export PS1="dj-mac: "
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
