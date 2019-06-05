@@ -26,9 +26,7 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 # use vim whenever possible
-if [ -f /apollo/env/envImprovement/bin/vim ]; then
-    export EDITOR=/apollo/env/envImprovement/bin/vim
-elif [ -f /usr/local/bin/vim ]; then
+if [ -f /usr/local/bin/vim ]; then
     export EDITOR=/usr/local/bin/vim
 else
     export EDITOR=/usr/bin/vim
@@ -114,5 +112,7 @@ if [ "$HOST" = "C02YN3R5JG5H.local" ]; then
     export PS1="dj-mac: "
 fi
 
+# Completions, etc.
+autoload -U compinit && compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
