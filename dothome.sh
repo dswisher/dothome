@@ -21,23 +21,44 @@ echoGreen() { echo -e "${green}$1${reset}"; }
 echoYellow() { echo -e "${yellow}$1${reset}"; }
 
 dolink() {
-	echo "Linking: ~/.$1 -> $DIR/$1"
+  SRC=~/.$1
+  if [ -z "$2" ]; then
+    DEST=$DIR/home/$1
+  else
+    DEST=$DIR/home/$2
+  fi
+
+	echo "Linking: $SRC -> $DEST"
 
 	# If file exists (not a symlink), make a backup of the file
-	if [ -e ~/.$1 ] || [ -h ~/.$1 ]
+	if [ -e $SRC ] || [ -h $SRC ]
 	then
-		if [ ! -h ~/.$1 ]
+		if [ ! -h $SRC ]
 		then
 			echo "Saving ~/.$1 to ~/.$1.SAVE"
-			mv ~/.$1 ~/.$1.SAVE
+			mv $SRC $SRC.SAVE
 		else
-			rm ~/.$1
+			rm $SRC
 		fi
 	fi
 
-	ln -s $DIR/home/$1 ~/.$1
+	ln -s $DEST $SRC
 }
 
+tmuxcolorlink() {
+  if [ `command -v tmux 2>/dev/null` ]; then
+    TMUX_VERSION="$(tmux -V | sed 's/[a-z ]//g')"
+    if [ -h ~/.tmux.conf.colors ]; then
+      rm ~/.tmux.conf.colors
+    fi
+
+    if [ `echo "$TMUX_VERSION < 2.9" | bc -l` -eq 1 ]; then
+      dolink "tmux.conf.colors" "tmux.conf.old.colors"
+    else
+      dolink "tmux.conf.colors" "tmux.conf.new.colors"
+    fi
+  fi
+}
 
 case "$1" in
 link)
@@ -53,6 +74,7 @@ link)
 	dolink "vimrc"
 	dolink "vim"
 	dolink "zshrc"
+  tmuxcolorlink
 ;;
 
 update)

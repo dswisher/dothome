@@ -1,0 +1,5 @@
+# Set statuc colors using the new (version 2.9+) syntax
+
+set -g status-style fg=colour11,bg=colour4
+setw -g window-status-style fg=colour7,bg=colour0,none
+setw -g window-status-current-style fg=colour10,bg=colour0,bold
