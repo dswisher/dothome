@@ -88,9 +88,9 @@ fi
 
 # Docker stuff
 if [ -f /usr/bin/docker ]; then
-    # TODO - not sure how portable this is
-    export DOCKER_HOST=tcp://127.0.0.1:2376;
-    export DOCKER_TLS_VERIFY=1
+    # TODO - not sure how portable this is - seems to hurt more than it helps?
+    # export DOCKER_HOST=tcp://127.0.0.1:2376;
+    # export DOCKER_TLS_VERIFY=1
 fi
 
 if [ -d $HOME/.nvm ]; then
