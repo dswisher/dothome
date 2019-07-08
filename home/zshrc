@@ -112,6 +112,10 @@ if [ "$HOST" = "C02YN3R5JG5H.local" ]; then
     export PS1="dj-mac: "
 fi
 
+if [ "$USER" = "ec2-user" ]; then
+    export PS1="ec2: "
+fi
+
 # Completions, etc.
 autoload -U compinit && compinit
 
