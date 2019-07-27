@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+if [ ! -f $HOME/.aws/current-profile-name ]; then
+    echo "You have not logged in!"
+    exit 1
+fi
+
+PROFILE=$(cat $HOME/.aws/current-profile-name)
+
+echo "PROFILE: $PROFILE"
+
+# TODO - allow profile to be set and used for subsequent commands
+# aws --profile pibnonprodrnc.okta.BUAdmin sts get-caller-identity
+aws --profile $PROFILE sts get-caller-identity
+OK=$?
+
+# Print out the expiration (if still valid)
+if [ $OK -eq 0 ]; then
+    EXPIRE=`cat $HOME/.aws/oktaAuthDate`
+    echo "Expiration: $EXPIRE"
+fi

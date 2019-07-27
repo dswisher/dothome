@@ -1,0 +1,56 @@
+#!/bin/zsh
+
+if [ -f $HOME/.aws/current-profile-name ]; then
+    DEFAULT_PROFILE=$(cat $HOME/.aws/current-profile-name)
+else
+    DEFAULT_PROFILE="rnc"
+fi
+
+PROFILE=""
+vared -p "Profile [$DEFAULT_PROFILE]: " PROFILE
+
+if [ -z "$PROFILE" ]; then
+    PROFILE="$DEFAULT_PROFILE"
+fi
+
+case $PROFILE in
+    con-nonprod)
+        ROLE="arn:aws:iam::365567845318:role/connonprodmktdata.okta.UsersElevated"
+        ;;
+    rnc-nonprod)
+        ROLE="arn:aws:iam::880671340840:role/pibnonprodrnc.okta.BUAdmin"
+        ;;
+    rnc-stag)
+        ROLE="arn:aws:iam::785464502395:role/pibstagrnc.okta.BUAdmin"
+        ;;
+    rnc-prod)
+        ROLE="arn:aws:iam::804996416271:role/pibprodrnc.okta.BUAdmin"
+        ;;
+    *)
+        echo "Profile '$PROFILE' is unknown."
+        exit 1
+        ;;
+esac
+
+echo "PROFILE: $PROFILE"
+echo "ROLE:    $ROLE"
+
+# TODO - allow profile and role to be set and used for subsequent commands
+oktapod --mfa push --role $ROLE --profile $PROFILE --awsprofile $PROFILE --awsregion us-east-1
+
+if [ $? -ne 0 ]; then
+    echo "Oktapod failed!"
+    exit 1
+fi
+
+# The STS token expires in two hours...record that in a file.
+date -v +2H > $HOME/.aws/oktaAuthDate
+
+# Save the current profile name for future reference.
+echo "$PROFILE" > $HOME/.aws/current-profile-name
+
+# Copy the specified profile to the default profile so we don't always have to specify the profile.
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR=${0:a:h}
+python $DIR/aws-copy-to-default.py "$PROFILE"
+
