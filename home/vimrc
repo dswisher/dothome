@@ -27,6 +27,7 @@ Plugin 'scrooloose/syntastic'
 " Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
 " Plugin '/usr/local/opt/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'hashivim/vim-terraform'
 
 Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 " Plugin 'HerringtonDarkholme/yats.vim'       " Typescript syntax highlighting
