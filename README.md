@@ -19,8 +19,12 @@ Clone vundle (vim plugin manager) and install plugins:
 
 Switch to zsh:
 
-    sudo apt-get install zsh
+    brew install zsh  -- OR --  sudo apt-get install zsh
+    sudo vi /etc/shells
+      (add `which zsh` output)
     chsh -s $(which zsh)
+
+**NOTE**: you may have to edit `/etc/shells` and add `which zsh`
 
 ## Misc
 
