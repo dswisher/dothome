@@ -36,7 +36,7 @@ echo "PROFILE: $PROFILE"
 echo "ROLE:    $ROLE"
 
 # TODO - allow profile and role to be set and used for subsequent commands
-oktapod --mfa push --role $ROLE --profile $PROFILE --awsprofile $PROFILE --awsregion us-east-1
+tokendito --mfa-method push --role-arn $ROLE --okta-profile $PROFILE --aws-profile $PROFILE --aws-region us-east-1
 
 if [ $? -ne 0 ]; then
     echo "Oktapod failed!"
