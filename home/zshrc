@@ -108,7 +108,7 @@ fi
 # Host-specific hacks
 HOST=`hostname`
 
-if [[ "$HOST" = "C02YN3R5JG5H.local" || "$HOST" = "MPLSs-MacBook-Pro.local" ]]; then
+if [[ "$HOST" = "C02YN3R5JG5H.local" || "$HOST" = "Dougs-MacBook-Pro.local" ]]; then
     export PS1="dj-mac: "
 fi
 
