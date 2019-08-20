@@ -116,6 +116,11 @@ if [ "$USER" = "ec2-user" ]; then
     export PS1="ec2: "
 fi
 
+# Local host-specific stuff that shouldn't be in source control
+if [ -f $HOME/.zshrc-local ]; then
+    source $HOME/.zshrc-local
+fi
+
 # Completions, etc.
 autoload -U compinit && compinit
 
