@@ -116,18 +116,14 @@ if [ "$USER" = "ec2-user" ]; then
     export PS1="ec2: "
     if [ -x "$(command -v aws)" ] && [ -x "$(command -v jq)" ]; then
         ACCOUNT=$(aws sts get-caller-identity | jq -r '.Account')
-        echo "ACCOUNT: $ACCOUNT"
         case $ACCOUNT in
         785464502395)
-          echo "  -> prod"
           export PS1="ec2-PROD: "
           ;;
         804996416271)
-          echo "  -> staging"
           export PS1="ec2-stg: "
           ;;
         880671340840)
-          echo "  -> non-prod"
           export PS1="ec2-dev: "
           ;;
         esac
