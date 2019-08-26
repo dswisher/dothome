@@ -19,10 +19,19 @@ Clone vundle (vim plugin manager) and install plugins:
 
 Switch to zsh:
 
-    brew install zsh  -- OR --  sudo apt-get install zsh
+    MacOS:
+    brew install zsh
     sudo vi /etc/shells
       (add `which zsh` output)
     chsh -s $(which zsh)
+
+    Ubuntu:
+    sudo apt-get install zsh
+    chsh -s $(which zsh)
+
+    Amazon Linux (chsh not present, must run chsh as root because don't know ec2-user password):
+    sudo yum install util-linux-user zsh
+    sudo chsh -s $(which zsh) $(whoami)
 
 **NOTE**: you may have to edit `/etc/shells` and add `which zsh`
 

@@ -3,7 +3,7 @@
 if [ -f $HOME/.aws/current-profile-name ]; then
     DEFAULT_PROFILE=$(cat $HOME/.aws/current-profile-name)
 else
-    DEFAULT_PROFILE="rnc"
+    DEFAULT_PROFILE="rnc-nonprod"
 fi
 
 PROFILE=""

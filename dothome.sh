@@ -82,7 +82,9 @@ link)
 	dolink "vim"
 	dolink "zshrc"
   tmuxcolorlink
-  binlink
+  if [ -f $HOME/bin ]; then
+    binlink
+  fi
 ;;
 
 update)
