@@ -30,6 +30,7 @@ Plugin 'OmniSharp/omnisharp-vim'    " C#
 " Plugin '/usr/local/opt/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
+Plugin 'tpope/vim-vinegar'                 " enhancements to netrw
 
 " Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 " Plugin 'HerringtonDarkholme/yats.vim'       " Typescript syntax highlighting
@@ -181,7 +182,8 @@ let g:go_fmt_command = "goimports"
 
 " - - - - netrw setup (built-in file browser)
 
-let g:netrw_list_hide = '.*\.swp$,.*\.pyc'
+" Hide all dot files, use gh to toggle
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " - - - - omnisharp setup
 
@@ -199,25 +201,56 @@ augroup omnisharp_commands
 
     " Finds members in the current buffer
     autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+
+    " Display the type name/documentation/signature of symbol under the cursor
+    autocmd FileType cs nnoremap <buffer> <Leader>ft :OmniSharpTypeLookup<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fd :OmniSharpDocumentation<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fg :OmniSharpSignatureHelp<CR>
+
+    " Fuzzy-search thru code actions
+    autocmd FileType cs nnoremap <buffer> <Leader>ff :OmniSharpGetCodeActions<CR>
+
+    " Populate quickfix with all code issues in solution
+    autocmd FileType cs nnoremap <buffer> <Leader>fb :OmniSharpGlobalCodeCheck<CR>
+
+    " Navigate between methods/classes
+    autocmd FileType cs nnoremap <buffer> <Leader>f<Up> :OmniSharpNavigateUp<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>f<Down> :OmniSharpNavigateDown<CR>
+
+    " Fix usings
+    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
 augroup END
 
 " - - - - asynccomplete setup
 
-" Tab completion
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-inoremap <expr> <Esc>   pumvisible() ? "\<C-e>" : "\<Esc>"
+" Completion mappings
+inoremap <expr> j     pumvisible() ? "\<C-n>" : "j"
+inoremap <expr> k     pumvisible() ? "\<C-p>" : "k"
+inoremap <expr> <cr>  pumvisible() ? "\<C-y>" : "\<cr>"
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
 " Don't pop up the popup until asked
 let g:asyncomplete_auto_popup = 0
+
+" Set colors (not really part of the plugin, but used for completion)
+highlight Pmenu ctermbg=White ctermfg=Gray
+highlight PmenuSel ctermbg=DarkRed ctermfg=White
+
 
 " - - - - ALE setup
 
 nnoremap <silent> <leader>ad :ALEDisableBuffer<cr>
 nnoremap <silent> <leader>ae :ALEEnableBuffer<cr>
-nnoremap <silent> <leader>an :ALENext<cr>
-nnoremap <silent> <leader>ap :ALEPrevious<cr>
+nmap <silent> <leader>an <Plug>(ale_next_wrap)
+nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
+
+" Use quickfix instead of loclist
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+highlight ALEError ctermbg=none cterm=underline
+highlight ALEWarning ctermbg=none cterm=underline
+highlight ALEInfo ctermbg=none cterm=underline
 
 " - - - - Custom Mappings
 nnoremap <leader>e :Explore<cr>
@@ -239,4 +272,8 @@ nnoremap <leader>qp :cprev<cr>
 " inoremap <C-Space> <C-x><C-o>
 " imap <C-@> <C-Space>
 inoremap <C-@> <c-x><c-o>
+
+" Remap jk to esc in insert mode and disable esc to force usage
+inoremap jk <esc>
+" inoremap <esc> <nop>
 
