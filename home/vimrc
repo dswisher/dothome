@@ -17,9 +17,12 @@ Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 
 " Main plugins
 " Plugin 'scrooloose/syntastic'
-Plugin 'dense-analysis/ale'         " async syntax checking, plus other stuff
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'OmniSharp/omnisharp-vim'    " C#
+Plugin 'dense-analysis/ale'                 " async syntax checking, plus other stuff
+Plugin 'prabirshrestha/asyncomplete.vim'    " async completion
+Plugin 'OmniSharp/omnisharp-vim'            " C#
+Plugin 'tpope/vim-vinegar'                  " enhancements to netrw
+Plugin 'tpope/vim-surround'                 " surround things
+Plugin 'tpope/vim-repeat'                   " enable repeat (.) in surround, etc.
 
 " Experimental
 " Plugin 'ledger/vim-ledger'                  " support for ledger files
@@ -30,7 +33,7 @@ Plugin 'OmniSharp/omnisharp-vim'    " C#
 " Plugin '/usr/local/opt/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
-Plugin 'tpope/vim-vinegar'                 " enhancements to netrw
+Plugin 'inkarkat/vim-ReplaceWithRegister'   " adds [count]["x]gr{motion}
 
 " Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 " Plugin 'HerringtonDarkholme/yats.vim'       " Typescript syntax highlighting
@@ -224,13 +227,26 @@ augroup END
 " - - - - asynccomplete setup
 
 " Completion mappings
-inoremap <expr> j     pumvisible() ? "\<C-n>" : "j"
-inoremap <expr> k     pumvisible() ? "\<C-p>" : "k"
+" These two are handy, but slow for some reason. Get used to C-n and C-p
+" inoremap <expr> j     pumvisible() ? "\<C-n>" : "j"
+" inoremap <expr> k     pumvisible() ? "\<C-p>" : "k"
 inoremap <expr> <cr>  pumvisible() ? "\<C-y>" : "\<cr>"
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
 " Don't pop up the popup until asked
 let g:asyncomplete_auto_popup = 0
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    " TODO - change this so it only expands if we're tabbing after a dot
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Set colors (not really part of the plugin, but used for completion)
 highlight Pmenu ctermbg=White ctermfg=Gray
@@ -269,11 +285,9 @@ nnoremap <leader>qp :cprev<cr>
 :autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
 
 " Map auto-complete to ctrl-space: https://stackoverflow.com/q/7722177
-" inoremap <C-Space> <C-x><C-o>
-" imap <C-@> <C-Space>
-inoremap <C-@> <c-x><c-o>
+" inoremap <C-@> <c-x><c-o>
 
 " Remap jk to esc in insert mode and disable esc to force usage
 inoremap jk <esc>
-" inoremap <esc> <nop>
+inoremap <esc> <nop>
 
