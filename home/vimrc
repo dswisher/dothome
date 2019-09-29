@@ -16,24 +16,20 @@ Plugin 'VundleVim/Vundle.vim'       " package management
 Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 
 " Main plugins
-" Plugin 'scrooloose/syntastic'
 Plugin 'dense-analysis/ale'                 " async syntax checking, plus other stuff
 Plugin 'prabirshrestha/asyncomplete.vim'    " async completion
 Plugin 'OmniSharp/omnisharp-vim'            " C#
 Plugin 'tpope/vim-vinegar'                  " enhancements to netrw
 Plugin 'tpope/vim-surround'                 " surround things
 Plugin 'tpope/vim-repeat'                   " enable repeat (.) in surround, etc.
+Plugin 'inkarkat/vim-ReplaceWithRegister'   " adds [count]["x]gr{motion}
 
 " Experimental
-" Plugin 'ledger/vim-ledger'                  " support for ledger files
-" Plugin 'nathangrigg/vim-beancount'          " support for beancount files
+Plugin 'vimwiki/vimwiki'                    " wiki!
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
 
-" Plugin 'mileszs/ack.vim'                    " search using Ack
-" Plugin 'ctrlpvim/ctrlp.vim'                 " fuzzy file finder
-" Plugin '/usr/local/opt/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
-Plugin 'inkarkat/vim-ReplaceWithRegister'   " adds [count]["x]gr{motion}
 
 " Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
 " Plugin 'HerringtonDarkholme/yats.vim'       " Typescript syntax highlighting
@@ -267,6 +263,28 @@ let g:ale_set_quickfix = 1
 highlight ALEError ctermbg=none cterm=underline
 highlight ALEWarning ctermbg=none cterm=underline
 highlight ALEInfo ctermbg=none cterm=underline
+
+
+" - - - - vimwiki setup
+
+let g:vimwiki_list = [{'path': '~/git/mywiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+nnoremap <leader>wp :InstantMarkdownPreview<cr>
+nnoremap <leader>wd :VimwikiMakeDiaryNote<cr>       " overwrites default 'delete'
+
+nnoremap <leader>wf :Files ~/git/mywiki/<CR>
+
+command! -bang -nargs=* Wg 
+   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>)." ~/git/mywiki",
+   \                   1,
+   \                   <bang>0)
+
+
+" - - - - vim-instant-markdown setup
+
+let g:instant_markdown_autostart = 0    " don't preview until we ask for it
+" let g:instant_markdown_python = 1       " use smdv for preview (pip install smdv)
 
 " - - - - Custom Mappings
 nnoremap <leader>e :Explore<cr>
