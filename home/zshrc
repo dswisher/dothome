@@ -37,6 +37,9 @@ export GIT_EDITOR="$EDITOR"
 # make sure we use vim
 alias vi=$EDITOR
 
+# ripgrep config
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 # playing with GO; this is probably wrong...
 if [ -d $HOME/GO ]; then
     export GOPATH=$HOME/GO

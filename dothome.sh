@@ -75,6 +75,7 @@ link)
 	dolink "gvimrc"
 	dolink "ideavimrc"
 	dolink "inputrc"
+	dolink "ripgreprc"
 	dolink "screenrc"
 	dolink "tigrc"
 	dolink "tmux.conf"

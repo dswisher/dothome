@@ -25,34 +25,16 @@ Plugin 'tpope/vim-repeat'                   " enable repeat (.) in surround, etc
 Plugin 'inkarkat/vim-ReplaceWithRegister'   " adds [count]["x]gr{motion}
 
 " Experimental
-Plugin 'vimwiki/vimwiki'                    " wiki!
-Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
-
 Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
 
-" Plugin 'ConradIrwin/vim-bracketed-paste'    " automagically set paste when pasting
+" Plugin 'vimwiki/vimwiki'                    " wiki!
+Plugin 'tyru/open-browser.vim'
+Plugin 'suan/vim-instant-markdown', {'rtp': 'after'}
+
 " Plugin 'HerringtonDarkholme/yats.vim'       " Typescript syntax highlighting
-" Plugin 'tpope/vim-surround'                 " surround
-" Plugin 'tpope/vim-repeat'                   " repeat support for surround and other plugins
 " Plugin 'tpope/vim-commentary'               " support for commenting things out
-" Plugin 'ludovicchabant/vim-gutentags'       " better tags support?
 " Plugin 'davidhalter/jedi-vim'               " Python code completion, via Jedi
-" Plugin 'Glench/Vim-Jinja2-Syntax'           " Jinja2 syntax
-
-" Remapping the tab key seems to mess me up more often than it helps
-" Plugin 'ervandew/supertab'          " tab completion
-
-" airline does not work right in WSL
-" Plugin 'vim-airline/vim-airline'    " fancy status bar
-" Plugin 'vim-airline/vim-airline-themes'
-
-" Language-specific
-" Plugin 'fatih/vim-go'           " Support for go
-
-" Python
-" Always folds everything up on file open; ick.
-" Plugin 'tmhedberg/SimpylFold'       " folding
 
 
 call vundle#end()            " required
@@ -108,11 +90,21 @@ set statusline +=\ %y
 " set foldmethod=indent
 set foldlevel=99
 
+" get the gx command working to open URLs - see https://www.reddit.com/r/vim/comments/7j9znw/gx_failing_to_open_url_on_vim8/
+let g:netrw_browsex_viewer="open"
+
 " file type: .sh
 augroup filetype_sh
     autocmd!
     " set up tabs
     autocmd FileType sh setlocal shiftwidth=2 tabstop=2
+augroup end
+
+" file type: .tf
+augroup filetype_terraform
+    autocmd!
+    " set up tabs
+    autocmd FileType terraform setlocal shiftwidth=4 tabstop=4
 augroup end
 
 " file type: .json
@@ -142,47 +134,12 @@ let mapleader=","
 let g:bufExplorerDisableDefaultKeyMapping=1
 nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
 
-" - - - - Syntastic setup
-" let g:syntastic_enable_signs = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_enable_highlighting = 0
-" let g:syntastic_always_populate_loc_list = 1    " can use :lnext and :lprev to move between errors
-" let g:syntastic_auto_loc_list = 1
-
-" let g:syntastic_python_checkers = ['flake8']
-" let g:syntastic_python_flake8_post_args="--max-line-length=175"
-
-" let g:syntastic_html_checkers=['']
-" let g:syntastic_asm_compiler=''
-
-" let g:syntastic_go_checkers = [ 'gofmt' ]
-
-" Disable java
-" let g:loaded_syntastic_java_javac_checker = 1
-
-" nnoremap <leader>sc :SyntasticReset<CR>
-" nnoremap <leader>ss :SyntasticCheck<CR>
-
-" let g:syntastic_ruby_mri_quiet_messages = { "regex": 'assigned but unused variable' }
-
-" - - - - vim-go setup
-" let g:go_fmt_fail_silently = 1
-let g:go_template_autocreate = 0
-
-let g:go_fmt_autosave = 1
-let g:go_fmt_fail_silently = 1
-let g:go_fmt_command = "goimports"
-" let g:go_list_type = "locationlist"
-
-" let g:go_fmt_options = {
-"     \ 'goimports': '-local mycompany.com',
-"     \ }
 
 " - - - - netrw setup (built-in file browser)
 
 " Hide all dot files, use gh to toggle
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+
 
 " - - - - omnisharp setup
 
@@ -219,6 +176,7 @@ augroup omnisharp_commands
     " Fix usings
     autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
 augroup END
+
 
 " - - - - asynccomplete setup
 
@@ -265,14 +223,28 @@ highlight ALEWarning ctermbg=none cterm=underline
 highlight ALEInfo ctermbg=none cterm=underline
 
 
-" - - - - vimwiki setup
+" - - - - open-browser.vim setup
 
-let g:vimwiki_list = [{'path': '~/git/mywiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+
+" - - - - fzf setup
+
+nnoremap <leader>o :Files<cr>
+
+
+" - - - - personal wiki setup
+
+" let g:vimwiki_list = [{'path': '~/git/mywiki/',
+"                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" nnoremap <leader>wd :VimwikiMakeDiaryNote<cr>       " overwrites default 'delete'
 
 nnoremap <leader>wp :InstantMarkdownPreview<cr>
-nnoremap <leader>wd :VimwikiMakeDiaryNote<cr>       " overwrites default 'delete'
-
+nnoremap <leader>wd :edit ~/git/mywiki/diary/index.md<cr>
+nnoremap <leader>wi :edit ~/git/mywiki/index.md<cr>
 nnoremap <leader>wf :Files ~/git/mywiki/<CR>
 
 command! -bang -nargs=* Wg 
@@ -304,6 +276,10 @@ nnoremap <leader>qp :cprev<cr>
 
 " Map auto-complete to ctrl-space: https://stackoverflow.com/q/7722177
 " inoremap <C-@> <c-x><c-o>
+
+" Add current date, in dd-MMM-yyyy format
+nnoremap <leader>id "=strftime("%d-%b-%Y")<CR>P
+nnoremap <leader>iD "=strftime("%Y-%m-%d")<CR>P
 
 " Remap jk to esc in insert mode and disable esc to force usage
 inoremap jk <esc>
