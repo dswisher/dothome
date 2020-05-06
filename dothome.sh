@@ -21,7 +21,7 @@ echoGreen() { echo -e "${green}$1${reset}"; }
 echoYellow() { echo -e "${yellow}$1${reset}"; }
 
 dolink() {
-  SRC=~/.$1
+  SRC=$HOME/.$1
   if [ -z "$2" ]; then
     DEST=$DIR/home/$1
   else
@@ -31,7 +31,7 @@ dolink() {
 	# If file exists (not a symlink), make a backup of the file
 	if [ -e $SRC ] || [ -h $SRC ]; then
 		if [ ! -h $SRC ]; then
-			echo "Saving ~/.$1 to ~/.$1.SAVE"
+			echo "Saving $HOME/.$1 to $HOME/.$1.SAVE"
 			mv $SRC $SRC.SAVE
 		fi
 	fi

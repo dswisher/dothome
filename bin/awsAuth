@@ -39,7 +39,7 @@ echo "ROLE:    $ROLE"
 tokendito --mfa-method push --role-arn $ROLE --okta-profile $PROFILE --aws-profile $PROFILE --aws-region us-east-1
 
 if [ $? -ne 0 ]; then
-    echo "Oktapod failed!"
+    echo "Tokendito failed!"
     exit 1
 fi
 

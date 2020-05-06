@@ -68,11 +68,10 @@ if [ -d $HOME/.pyenv ]; then
 fi
 
 # jenv support (if installed)
-# if [ -d $HOME/.jenv ]; then
-#     export PATH="$HOME/.jenv/bin:$PATH"
-#     eval "$(jenv init -)"
-# elif [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
-if [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
+if [ -d $HOME/.jenv ]; then
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+elif [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
     export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 else
     # Test if Java installed. This works on Mac, which cannot just test for existance

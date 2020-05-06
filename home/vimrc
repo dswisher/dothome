@@ -13,7 +13,7 @@ call vundle#begin()
 
 " Core plugins
 Plugin 'VundleVim/Vundle.vim'       " package management
-Plugin 'jlanzarotta/bufexplorer'    " better buffer list
+" Plugin 'jlanzarotta/bufexplorer'    " better buffer list
 
 " Main plugins
 Plugin 'dense-analysis/ale'                 " async syntax checking, plus other stuff
@@ -22,11 +22,13 @@ Plugin 'OmniSharp/omnisharp-vim'            " C#
 Plugin 'tpope/vim-vinegar'                  " enhancements to netrw
 Plugin 'tpope/vim-surround'                 " surround things
 Plugin 'tpope/vim-repeat'                   " enable repeat (.) in surround, etc.
-Plugin 'inkarkat/vim-ReplaceWithRegister'   " adds [count]["x]gr{motion}
+" Plugin 'inkarkat/vim-ReplaceWithRegister'   " adds [count]["x]gr{motion}
 
 " Experimental
 Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
+Plugin 'chr4/nginx.vim'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Plugin 'vimwiki/vimwiki'                    " wiki!
 Plugin 'tyru/open-browser.vim'
@@ -119,6 +121,19 @@ augroup filetype_yaml
     autocmd FileType yaml setlocal foldmethod=indent foldlevel=20
 augroup end
 
+" file type: .cs
+augroup filetype_cs
+    autocmd!
+    autocmd FileType cs let &l:makeprg = 'dotnet build /nologo /v:q /property:GenerateFullPaths=true /clp:NoSummary .'
+    autocmd FileType cs let &l:errorformat = ' %#%f(%l\,%c): %m'
+augroup end
+
+" file type: .pro
+augroup filetype_pro
+    autocmd!
+    autocmd BufNewFile,BufRead *.pro set filetype=prolog
+augroup end
+
 " file type: ALL
 augroup filetype_all
     autocmd!
@@ -132,7 +147,7 @@ let mapleader=","
 
 " - - - - BufExplorer Setup
 let g:bufExplorerDisableDefaultKeyMapping=1
-nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
+" nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
 
 
 " - - - - netrw setup (built-in file browser)
@@ -233,6 +248,8 @@ vmap gx <Plug>(openbrowser-smart-search)
 " - - - - fzf setup
 
 nnoremap <leader>o :Files<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>m :Marks<cr>
 
 
 " - - - - personal wiki setup
@@ -271,6 +288,13 @@ nnoremap <leader>qn :cnext<cr>
 nnoremap <leader>qo :copen<cr>
 nnoremap <leader>qp :cprev<cr>
 
+nnoremap <leader>lc :lclose<cr>
+nnoremap <leader>lf :lfirst<cr>
+nnoremap <leader>ll :llast<cr>
+nnoremap <leader>ln :lnext<cr>
+nnoremap <leader>lo :lopen<cr>
+nnoremap <leader>lp :lprev<cr>
+
 " Close the quickfix window when item is selected
 :autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
 
@@ -283,5 +307,5 @@ nnoremap <leader>iD "=strftime("%Y-%m-%d")<CR>P
 
 " Remap jk to esc in insert mode and disable esc to force usage
 inoremap jk <esc>
-inoremap <esc> <nop>
+" inoremap <esc> <nop>
 
