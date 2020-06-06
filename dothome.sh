@@ -42,6 +42,27 @@ dolink() {
   fi
 }
 
+dounlink() {
+  SRC=$HOME/.$1
+  if [ -L $SRC ]; then
+    echo "Removing link $SRC..."
+    rm $SRC
+  fi
+}
+
+dorelink() {
+  SRC=$HOME/.$1
+  DEST=$DIR/home/$2
+
+  echo "Re-linking: $SRC -> $DEST"
+
+  if [ -L $SRC ]; then
+    rm $SRC
+  fi
+
+  ln -s $DEST $SRC
+}
+
 tmuxcolorlink() {
   if [ `command -v tmux 2>/dev/null` ]; then
     TMUX_VERSION="$(tmux -V | sed 's/[a-z ]//g')"
@@ -72,15 +93,15 @@ link)
 	dolink "ackrc"
 	dolink "ctags"
 	dolink "flake8"
-	dolink "gvimrc"
+	dounlink "gvimrc"
 	dolink "ideavimrc"
 	dolink "inputrc"
 	dolink "ripgreprc"
 	dolink "screenrc"
 	dolink "tigrc"
 	dolink "tmux.conf"
-	dolink "vimrc"
-	dolink "vim"
+	dounlink "vimrc"
+	dorelink "vim" "vim2"
 	dolink "zshrc"
   tmuxcolorlink
   if [ -f $HOME/bin ]; then

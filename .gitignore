@@ -1,5 +1,6 @@
 *.swp
 tags
+
 home/.vim/bundle/Vundle.vim/
 home/.vim/bundle/nerdtree/
 home/.vim/bundle/ctrlp.vim/
@@ -22,3 +23,6 @@ home/vim/bundle/vimwiki/
 home/vim/bundle/open-browser.vim
 home/vim/bundle/nginx.vim/
 home/vim/bundle/vim-highlightedyank
+
+home/vim2/plugged
+home/vim2/.netrwhist

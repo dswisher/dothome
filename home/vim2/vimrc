@@ -1,0 +1,58 @@
+"
+"  Doug's newer VIM initialization file
+"
+
+" ======= PLUGINS ======= {{{1
+
+" Plugins are managed using the vim-plug plugin.
+" Specify the directory where plugins will be installed.
+call plug#begin('~/.vim/plugged')
+
+" Use the latest fzf plugin from github, prompting to install fzf if not
+" already installed. This provides the basic FZF command.
+" Also set up the fzf-vim plugin, which uses fzf to browse things like buffers.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
+
+" Enhancements to netrw
+Plug 'tpope/vim-vinegar'
+
+" The airline plugin provides pretty status lines. I tried it, but had issues,
+" so uninstalled it. I don't recall why, so lets try it again.
+Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
+" Integration with omnisharp for C# development
+Plug 'OmniSharp/omnisharp-vim'
+
+" Perform insert mode completions with Tab
+" Seems to prevent usage of tab; will rename c-space to c-x c-o and see if
+" that works well
+" Plug 'ervandew/supertab'
+
+
+" Initialize plugin system
+call plug#end()
+
+
+" ======= OPTIONS ======= {{{1
+
+" I prefer comma as the leader, as opposed to the default \
+let mapleader=","
+let maplocalleader = ','
+
+" Now that we have a bit more confidence in our runtime environment, set up
+" all of the filetype detection, plugin, and indent hooks.
+filetype plugin indent on
+
+" Misc settings
+set expandtab           " spaces instead of tabs
+set hidden              " allow buffers with changes to be unlinked from a window
+set incsearch           " show search progress
+" set laststatus=2        " always show a status line
+set number              " show line numbers
+set scrolloff=2         " keep a couple of lines above/below cursor
+set shiftround          " round indent when using > and <
+set shiftwidth=0        " when indenting, use one tabstop
+set tabstop=4           " for almost all file types, use 4 spaces
+
+" vim: set fdm=marker fdl=1 :
