@@ -23,12 +23,13 @@ Plugin 'tpope/vim-vinegar'                  " enhancements to netrw
 Plugin 'tpope/vim-surround'                 " surround things
 Plugin 'tpope/vim-repeat'                   " enable repeat (.) in surround, etc.
 " Plugin 'inkarkat/vim-ReplaceWithRegister'   " adds [count]["x]gr{motion}
+Plugin 'junegunn/fzf.vim'
 
 " Experimental
-Plugin 'junegunn/fzf.vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'chr4/nginx.vim'
-Plugin 'Glench/Vim-Jinja2-Syntax'
+" Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'machakann/vim-highlightedyank'
 
 " Plugin 'vimwiki/vimwiki'                    " wiki!
 Plugin 'tyru/open-browser.vim'
@@ -70,7 +71,7 @@ set wrapscan            " wrap searches around end of file
 " set t_BE=               " disable bracketed paste in iterm2
 
 set number              " show line numbers
-set relativenumber      " ...and make 'em relative
+" set relativenumber      " ...and make 'em relative
 
 set statusline =
 " Buffer number
@@ -306,6 +307,6 @@ nnoremap <leader>id "=strftime("%d-%b-%Y")<CR>P
 nnoremap <leader>iD "=strftime("%Y-%m-%d")<CR>P
 
 " Remap jk to esc in insert mode and disable esc to force usage
-inoremap jk <esc>
+" inoremap jk <esc>
 " inoremap <esc> <nop>
 
