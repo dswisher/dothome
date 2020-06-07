@@ -21,8 +21,11 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 
+" Language server protocol tooling: omnisharp for C#, etc.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Integration with omnisharp for C# development
-Plug 'OmniSharp/omnisharp-vim'
+" Plug 'OmniSharp/omnisharp-vim'
 
 " Perform insert mode completions with Tab
 " Seems to prevent usage of tab; will rename c-space to c-x c-o and see if

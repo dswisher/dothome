@@ -1,28 +1,22 @@
+"
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Mappings for things that use the current cursor location
-nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
-nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-nnoremap <buffer> <Leader>fs :OmniSharpFindSymbol<CR>
-nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+" GoTo code navigation.
+nmap <buffer> <silent> gd <Plug>(coc-definition)
+nmap <buffer> <silent> gy <Plug>(coc-type-definition)
+nmap <buffer> <silent> gi <Plug>(coc-implementation)
+nmap <buffer> <silent> gr <Plug>(coc-references)
 
-" Finds members in the current buffer
-nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" Display the type name/documentation/signature of symbol under the cursor
-nnoremap <buffer> <Leader>ft :OmniSharpTypeLookup<CR>
-nnoremap <buffer> <Leader>fd :OmniSharpDocumentation<CR>
-nnoremap <buffer> <Leader>fg :OmniSharpSignatureHelp<CR>
-
-" Fuzzy-search thru code actions
-nnoremap <buffer> <Leader>ff :OmniSharpGetCodeActions<CR>
-
-" Populate quickfix with all code issues in solution
-nnoremap <buffer> <Leader>fb :OmniSharpGlobalCodeCheck<CR>
-
-" Navigate between methods/classes
-nnoremap <buffer> <Leader>f<Up> :OmniSharpNavigateUp<CR>
-nnoremap <buffer> <Leader>f<Down> :OmniSharpNavigateDown<CR>
-
-" Fix usings
-nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
 
