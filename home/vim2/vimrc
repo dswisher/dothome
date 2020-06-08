@@ -18,20 +18,25 @@ Plug 'tpope/vim-vinegar'
 
 " The airline plugin provides pretty status lines. I tried it, but had issues,
 " so uninstalled it. I don't recall why, so lets try it again.
-Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+if has('mac')
+    Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
+endif
 
-" Language server protocol tooling: omnisharp for C#, etc.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Intellisense, via language server protocol
+if has('mac')
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
+
+" Install ALE, as it is constantly running the file through lint and showing errors in
+" realtime. With CoC, it only checks on file save.
+Plug 'dense-analysis/ale'
 
 " Integration with omnisharp for C# development
-" Plug 'OmniSharp/omnisharp-vim'
-
-" Perform insert mode completions with Tab
-" Seems to prevent usage of tab; will rename c-space to c-x c-o and see if
-" that works well
-" Plug 'ervandew/supertab'
-
+if has('mac')
+    " let g:OmniSharp_server_stdio = 1    " TODO - better place to put this?
+    " Plug 'OmniSharp/omnisharp-vim'
+endif
 
 " Initialize plugin system
 call plug#end()
@@ -57,5 +62,12 @@ set scrolloff=2         " keep a couple of lines above/below cursor
 set shiftround          " round indent when using > and <
 set shiftwidth=0        " when indenting, use one tabstop
 set tabstop=4           " for almost all file types, use 4 spaces
+
+" file type: ALL
+augroup filetype_all
+    autocmd!
+    " do not automatically add comments to new lines
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup end
 
 " vim: set fdm=marker fdl=1 :

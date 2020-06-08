@@ -1,0 +1,15 @@
+*swish.txt*                         Customizations by myself.
+
+Version: 0.0.1
+
+CONTENTS                            *swish-contents*
+
+Introduction                        |swish-introduction|
+
+
+==============================================================================
+INTRODUCTION                        *swish-introduction*
+
+My custom VIM stuff.
+
+

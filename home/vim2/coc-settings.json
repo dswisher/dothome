@@ -1,0 +1,4 @@
+{
+    "omnisharp.useDotnet": false,
+    "diagnostic.displayByAle": true
+}
