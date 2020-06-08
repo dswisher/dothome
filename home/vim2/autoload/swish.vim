@@ -1,32 +1,6 @@
 " swish: my custom bits, until I figure out a better way to organize them.
 "
 
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
-endfunction
-
-
-function! swish#SetupCoc() abort
-
-    " Use `[g` and `]g` to navigate diagnostics
-    nmap <silent> [g <Plug>(coc-diagnostic-prev)
-    nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-    " GoTo code navigation.
-    nmap <buffer> <silent> gd <Plug>(coc-definition)
-    nmap <buffer> <silent> gy <Plug>(coc-type-definition)
-    nmap <buffer> <silent> gi <Plug>(coc-implementation)
-    nmap <buffer> <silent> gr <Plug>(coc-references)
-
-    " Use K to show documentation in preview window.
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
-endfunction
-
-
 function! swish#SetupOmnisharp() abort
     " The following commands are contextual, based on the cursor position.
     nnoremap <buffer> <silent> gd :OmniSharpGotoDefinition<CR>

@@ -3,7 +3,9 @@ if ! exists(':Buffers')
     finish
 endif
 
-nnoremap <leader>o :Files<cr>
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>m :Marks<cr>
+nnoremap <silent> <leader>o :Files<cr>
+nnoremap <silent> <leader>b :Buffers<cr>
+nnoremap <silent> <leader>m :Marks<cr>
+
+nnoremap <silent> <leader>rg :Rg <C-R><C-W><CR>
 
