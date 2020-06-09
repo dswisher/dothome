@@ -26,7 +26,7 @@ Plug 'tpope/vim-commentary'
 " so uninstalled it. I don't recall why, so lets try it again.
 if has('mac')
     Plug 'vim-airline/vim-airline'
-    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline-themes'
 endif
 
 " Intellisense, via language server protocol

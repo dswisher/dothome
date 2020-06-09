@@ -1,7 +1,7 @@
 " swish: my custom bits, until I figure out a better way to organize them.
 "
 
-function! swish#SetupOmnisharp() abort
+function! swish#SetupOmnisharpKeymap() abort
     " The following commands are contextual, based on the cursor position.
     nnoremap <buffer> <silent> gd :OmniSharpGotoDefinition<CR>
     nnoremap <buffer> <silent> <Leader>fi :OmniSharpFindImplementations<CR>
