@@ -1,3 +1,7 @@
+" include guard; quit if coc isn't loaded
+if ! exists('g:did_coc_loaded')
+    finish
+endif
 
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)

@@ -19,6 +19,9 @@ Plug 'tpope/vim-vinegar'
 " Work with git while inside vim
 Plug 'tpope/vim-fugitive'
 
+" Comment things out using gcc and gc
+Plug 'tpope/vim-commentary'
+
 " The airline plugin provides pretty status lines. I tried it, but had issues,
 " so uninstalled it. I don't recall why, so lets try it again.
 if has('mac')
@@ -28,7 +31,9 @@ endif
 
 " Intellisense, via language server protocol
 if has('mac')
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}   " released version
+    " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}      " build from source
+    let s:coc_installed = 0     " can't use the coc plugin's flag, as that won't be loaded yet
 endif
 
 " Install ALE, as it constantly runs the file through lint and shows errors in
@@ -38,8 +43,7 @@ Plug 'dense-analysis/ale'
 " Integration with omnisharp for C# development
 "   - coc also integrates with omnisharp, but not quite as well
 if has('mac')
-    " let g:OmniSharp_server_stdio = 1    " TODO - better place to put this?
-    " Plug 'OmniSharp/omnisharp-vim'
+    Plug 'OmniSharp/omnisharp-vim'
 endif
 
 " A collection of language packs for Vim. Improves syntax and indentation support.
@@ -47,6 +51,12 @@ Plug 'sheerun/vim-polyglot'
 
 " Python folding support
 Plug 'tmhedberg/SimpylFold'
+
+" Viewer & Finder for LSP symbols and tags
+" TODO - only install if coc is installed
+if s:coc_installed
+    Plug 'liuchengxu/vista.vim'
+endif
 
 " Initialize plugin system
 call plug#end()
@@ -63,6 +73,8 @@ let maplocalleader = ','
 filetype plugin indent on
 
 " Misc settings
+set cmdheight=2         " recommended by coc, give more space for displaying messages
+set directory=~/.vim/swapfiles//    " put all .swp files in one place
 set expandtab           " spaces instead of tabs
 set foldlevel=99        " start with all folds open
 set hidden              " allow buffers with changes to be unlinked from a window
@@ -72,7 +84,9 @@ set number              " show line numbers
 set scrolloff=2         " keep a couple of lines above/below cursor
 set shiftround          " round indent when using > and <
 set shiftwidth=0        " when indenting, use one tabstop
+set signcolumn=yes      " recommended by coc, always show the sign column for diagnostics
 set tabstop=4           " for almost all file types, use 4 spaces
+set updatetime=300      " recommended by coc, default of 4000 leads to delays
 
 " file type: ALL
 augroup filetype_all

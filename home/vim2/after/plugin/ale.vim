@@ -1,5 +1,7 @@
-
-" TODO - add a guard!
+" include guard; quit if ale isn't loaded
+if ! exists('g:loaded_ale')
+    finish
+endif
 
 " TODO - these look useful, but I never used them.
 " nnoremap <silent> <leader>ad :ALEDisableBuffer<cr>
@@ -14,4 +16,9 @@ let g:ale_set_quickfix = 1
 highlight ALEError ctermbg=none cterm=underline
 highlight ALEWarning ctermbg=none cterm=underline
 highlight ALEInfo ctermbg=none cterm=underline
+
+let g:ale_linters = {
+\   'cs': [],
+\   'python': ['flake8']
+\}
 

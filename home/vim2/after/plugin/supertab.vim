@@ -1,7 +1,9 @@
+" include guard; quit if supertab isn't loaded
+if ! exists("loaded_supertab")
+    finish
+endif
 
-" TODO - add a guard!
-
-" this first one does not work for me (console)
+" this first one does not work for me (console), nor does the second?
 " let g:SuperTabMappingForward = '<c-space>'
 " let g:SuperTabMappingForward = '<nul>'
 
