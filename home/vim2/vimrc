@@ -24,10 +24,8 @@ Plug 'tpope/vim-commentary'
 
 " The airline plugin provides pretty status lines. I tried it, but had issues,
 " so uninstalled it. I don't recall why, so lets try it again.
-if has('mac')
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-endif
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Intellisense, via language server protocol
 if has('mac')
@@ -78,20 +76,27 @@ let maplocalleader = ','
 filetype plugin indent on
 
 " Misc settings
+" set autoindent          " always set autoindenting on
 set cmdheight=2         " recommended by coc, give more space for displaying messages
 set directory=~/.vim/swapfiles//    " put all .swp files in one place
 set expandtab           " spaces instead of tabs
 set foldlevel=99        " start with all folds open
 set hidden              " allow buffers with changes to be unlinked from a window
+set nohlsearch          " do not highlight all search matches; enabled by default on some instances
 set incsearch           " show search progress
 " set laststatus=2        " always show a status line
 set number              " show line numbers
+" set ruler               " show line,column in status line
 set scrolloff=2         " keep a couple of lines above/below cursor
 set shiftround          " round indent when using > and <
 set shiftwidth=0        " when indenting, use one tabstop
-set signcolumn=yes      " recommended by coc, always show the sign column for diagnostics
+" set showcmd             " show partial commands in status line
+" set signcolumn=yes      " recommended by coc, always show the sign column for diagnostics
 set tabstop=4           " for almost all file types, use 4 spaces
 set updatetime=300      " recommended by coc, default of 4000 leads to delays
+" set wildmenu
+set nowrap              " don't wrap lines
+" set wrapscan            " wrap searches around end of file
 
 " file type: ALL
 augroup filetype_all
