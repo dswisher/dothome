@@ -23,8 +23,8 @@ function! swish#SetupOmnisharpKeymap() abort
     nnoremap <buffer> <silent> <Leader>fb :OmniSharpGlobalCodeCheck<CR>
 
     " Navigate between methods/classes
-    nnoremap <buffer> <silent> <Leader>f<Up> :OmniSharpNavigateUp<CR>
-    nnoremap <buffer> <silent> <Leader>f<Down> :OmniSharpNavigateDown<CR>
+    nnoremap <buffer> <silent> <Leader>fk :OmniSharpNavigateUp<CR>
+    nnoremap <buffer> <silent> <Leader>fj :OmniSharpNavigateDown<CR>
 
     " Fix usings
     nnoremap <buffer> <silent> <Leader>fx :OmniSharpFixUsings<CR>

@@ -46,6 +46,11 @@ if has('mac')
     Plug 'OmniSharp/omnisharp-vim'
 endif
 
+" An alternative to CoC for completion.
+if has('mac') && ! s:coc_installed
+    Plug 'prabirshrestha/asyncomplete.vim'
+endif
+
 " A collection of language packs for Vim. Improves syntax and indentation support.
 Plug 'sheerun/vim-polyglot'
 
