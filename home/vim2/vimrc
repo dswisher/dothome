@@ -59,7 +59,7 @@ Plug 'tmhedberg/SimpylFold'
 
 " Viewer & Finder for LSP symbols and tags
 " TODO - only install if coc is installed
-if s:coc_installed
+if has('mac') && s:coc_installed
     Plug 'liuchengxu/vista.vim'
 endif
 
