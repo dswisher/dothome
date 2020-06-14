@@ -12,10 +12,9 @@ Change into the directory and run:
     cd dothome
     ./dothome.sh link
 
-Clone vundle (vim plugin manager) and install plugins:
+Set up vim plugins:
 
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+	vim +PlugInstall +qall
 
 Switch to zsh:
 

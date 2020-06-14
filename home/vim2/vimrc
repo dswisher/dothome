@@ -28,10 +28,21 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Intellisense, via language server protocol
+let s:coc_installed = 0     " can't use the coc plugin's flag, as that won't be loaded yet
 if has('mac')
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}   " released version
     " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}      " build from source
-    let s:coc_installed = 0     " can't use the coc plugin's flag, as that won't be loaded yet
+    " let s:coc_installed = 1
+endif
+
+" Intellisense, via language server protocol
+" Seems promising, but unable to get diagnostics to work in C# or Python
+let s:lsp_installed = 0
+if has('mac')
+    " Plug 'prabirshrestha/async.vim'
+    " Plug 'prabirshrestha/vim-lsp'
+    " Plug 'mattn/vim-lsp-settings'
+    " let s:lsp_installed = 1
 endif
 
 " Install ALE, as it constantly runs the file through lint and shows errors in
@@ -45,8 +56,9 @@ if has('mac')
 endif
 
 " An alternative to CoC for completion.
-if has('mac') && ! s:coc_installed
+if has('mac')
     Plug 'prabirshrestha/asyncomplete.vim'
+    " Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
 " A collection of language packs for Vim. Improves syntax and indentation support.
@@ -56,8 +68,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/SimpylFold'
 
 " Viewer & Finder for LSP symbols and tags
-" TODO - only install if coc is installed
-if has('mac') && s:coc_installed
+if s:coc_installed
     Plug 'liuchengxu/vista.vim'
 endif
 
@@ -86,6 +97,7 @@ set nohlsearch          " do not highlight all search matches; enabled by defaul
 set incsearch           " show search progress
 " set laststatus=2        " always show a status line
 set number              " show line numbers
+set relativenumber      " use relative numbers
 " set ruler               " show line,column in status line
 set scrolloff=2         " keep a couple of lines above/below cursor
 set shiftround          " round indent when using > and <
