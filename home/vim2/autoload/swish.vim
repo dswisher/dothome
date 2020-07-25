@@ -5,6 +5,7 @@ function! swish#SetupOmnisharpKeymap() abort
     " The following commands are contextual, based on the cursor position.
     nnoremap <buffer> <silent> gd :OmniSharpGotoDefinition<CR>
     nnoremap <buffer> <silent> <Leader>fi :OmniSharpFindImplementations<CR>
+    nnoremap <buffer> <silent> <Leader>fr :OmniSharpRename<CR>
     nnoremap <buffer> <silent> <Leader>fs :OmniSharpFindSymbol<CR>
     nnoremap <buffer> <silent> <Leader>fu :OmniSharpFindUsages<CR>
 

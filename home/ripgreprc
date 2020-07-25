@@ -2,3 +2,7 @@
 # Don't let ripgrep vomit really long lines to my terminal, and show a preview.
 --max-columns=255
 
+# Add a type for Jenkins files
+--type-add
+jenkins:Jenkinsfile
+

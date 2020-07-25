@@ -22,3 +22,6 @@ let g:lsp_settings = {
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')
 
+nnoremap gd :LspDefinition<CR>
+nnoremap <leader>fr :LspReferences<CR>
+

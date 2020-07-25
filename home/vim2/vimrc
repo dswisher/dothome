@@ -41,24 +41,31 @@ let s:lsp_installed = 0
 if has('mac')
     " Plug 'prabirshrestha/async.vim'
     " Plug 'prabirshrestha/vim-lsp'
+    " Plug '/Users/swisherd/git/vim-lsp'
     " Plug 'mattn/vim-lsp-settings'
     " let s:lsp_installed = 1
 endif
 
 " Install ALE, as it constantly runs the file through lint and shows errors in
 " realtime. With CoC, it only checks on file save/load.
-Plug 'dense-analysis/ale'
+if ! s:lsp_installed
+    Plug 'dense-analysis/ale'
+endif
 
 " Integration with omnisharp for C# development
 "   - coc also integrates with omnisharp, but not quite as well
-if has('mac')
+"   - vim-lsp has similar issues with omnisharp (no diagnostics)
+if has('mac') && ! s:lsp_installed
     Plug 'OmniSharp/omnisharp-vim'
 endif
 
 " An alternative to CoC for completion.
 if has('mac')
     Plug 'prabirshrestha/asyncomplete.vim'
-    " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+    if s:lsp_installed
+        Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    endif
 endif
 
 " A collection of language packs for Vim. Improves syntax and indentation support.
