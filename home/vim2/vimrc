@@ -29,7 +29,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 " Intellisense, via language server protocol
 let s:coc_installed = 0     " can't use the coc plugin's flag, as that won't be loaded yet
-if has('mac')
+if executable('dotnet')
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}   " released version
     " Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}      " build from source
     " let s:coc_installed = 1
@@ -38,7 +38,7 @@ endif
 " Intellisense, via language server protocol
 " Seems promising, but unable to get diagnostics to work in C# or Python
 let s:lsp_installed = 0
-if has('mac')
+if executable('dotnet')
     " Plug 'prabirshrestha/async.vim'
     " Plug 'prabirshrestha/vim-lsp'
     " Plug '/Users/swisherd/git/vim-lsp'
@@ -55,12 +55,12 @@ endif
 " Integration with omnisharp for C# development
 "   - coc also integrates with omnisharp, but not quite as well
 "   - vim-lsp has similar issues with omnisharp (no diagnostics)
-if has('mac') && ! s:lsp_installed
+if executable('dotnet') && ! s:lsp_installed
     Plug 'OmniSharp/omnisharp-vim'
 endif
 
 " An alternative to CoC for completion.
-if has('mac')
+if executable('dotnet')
     Plug 'prabirshrestha/asyncomplete.vim'
 
     if s:lsp_installed
