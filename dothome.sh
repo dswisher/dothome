@@ -104,7 +104,7 @@ link)
 	dorelink "vim" "vim2"
 	dolink "zshrc"
   tmuxcolorlink
-  if [ -f $HOME/bin ]; then
+  if [ -d $HOME/bin ]; then
     binlink
   fi
 ;;

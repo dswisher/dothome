@@ -44,7 +44,12 @@ if [ $? -ne 0 ]; then
 fi
 
 # The STS token expires in two hours...record that in a file.
-date -v +2H > $HOME/.aws/oktaAuthDate
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    date -d '+2 hour' > $HOME/.aws/oktaAuthDate
+else
+    # Assume Mac
+    date -v +2H > $HOME/.aws/oktaAuthDate
+fi
 
 # Save the current profile name for future reference.
 echo "$PROFILE" > $HOME/.aws/current-profile-name
