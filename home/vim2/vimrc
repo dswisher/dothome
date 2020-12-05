@@ -79,6 +79,9 @@ if s:coc_installed
     Plug 'liuchengxu/vista.vim'
 endif
 
+" Antlr support
+Plug 'dylon/vim-antlr'
+
 " Initialize plugin system
 call plug#end()
 

@@ -4,6 +4,7 @@ if ! exists(':Buffers')
 endif
 
 nnoremap <silent> <leader>o :Files<cr>
+nnoremap <silent> <leader>g :GFiles<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 nnoremap <silent> <leader>m :Marks<cr>
 
