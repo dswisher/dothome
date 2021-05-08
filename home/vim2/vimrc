@@ -16,14 +16,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
 " Enhancements to netrw
 Plug 'tpope/vim-vinegar'
 
-" Work with git while inside vim
-Plug 'tpope/vim-fugitive'
-
 " Comment things out using gcc and gc
 Plug 'tpope/vim-commentary'
 
-" The airline plugin provides pretty status lines. I tried it, but had issues,
-" so uninstalled it. I don't recall why, so lets try it again.
+" The airline plugin provides pretty status lines.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -72,7 +68,7 @@ endif
 Plug 'sheerun/vim-polyglot'
 
 " Python folding support
-Plug 'tmhedberg/SimpylFold'
+" Plug 'tmhedberg/SimpylFold'
 
 " Viewer & Finder for LSP symbols and tags
 if s:coc_installed
@@ -80,10 +76,26 @@ if s:coc_installed
 endif
 
 " Antlr support
-Plug 'dylon/vim-antlr'
+" Plug 'dylon/vim-antlr'
+
+" Execute REST calls within Vim
+Plug 'diepm/vim-rest-console'
+" Plug 'bewakes/vim-rest-client'
+
+" Vim Wiki
+Plug 'vimwiki/vimwiki'
+
+" calendar.vim
+Plug 'mattn/calendar-vim'
 
 " Initialize plugin system
 call plug#end()
+
+
+" TODO - figure out how to put this in the after/plugin/vim-wiki.vim file (or similar). Didn't work when I put it there.
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                     \ 'syntax': 'markdown',
+                     \ 'ext': '.wiki'}]
 
 
 " ======= OPTIONS ======= {{{1
@@ -119,6 +131,7 @@ set updatetime=300      " recommended by coc, default of 4000 leads to delays
 " set wildmenu
 set nowrap              " don't wrap lines
 " set wrapscan            " wrap searches around end of file
+set nocompatible
 
 " file type: ALL
 augroup filetype_all

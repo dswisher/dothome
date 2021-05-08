@@ -55,6 +55,9 @@ fi
 # Put local bin in path
 export PATH="$PATH:$HOME/bin"
 
+# FZF and RG
+export FZF_DEFAULT_COMMAND='rg --files'
+
 # pyenv support (if installed)
 if [ -d $HOME/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
@@ -106,6 +109,15 @@ if [ -f /usr/local/bin/brew ]; then
     # Only update once per day
     export HOMEBREW_AUTO_UPDATE_SECS=86400
 fi
+
+# Fuzzy cd - fcd
+unalias fcd 2> /dev/null
+fcd() {
+    local dest_dir=$($HOME/bin/fcd-input.sh | fzf )
+    if [[ $dest_dir != '' ]]; then
+        cd "$dest_dir"
+    fi
+}
 
 # Host-specific hacks
 HOST=`hostname`

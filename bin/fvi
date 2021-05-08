@@ -1,0 +1,8 @@
+#!/bin/bash
+
+TARGET=$(fzf)
+
+if [[ $TARGET != '' ]]; then
+    $EDITOR $TARGET
+fi
+
