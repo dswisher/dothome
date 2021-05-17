@@ -103,6 +103,7 @@ link)
 	dounlink "vimrc"
 	dorelink "vim" "vim2"
 	dolink "zshrc"
+    dolink "config/vifm/vifmrc"
   tmuxcolorlink
   if [ -d $HOME/bin ]; then
     binlink
