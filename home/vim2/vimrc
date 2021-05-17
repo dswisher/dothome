@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } | Plug 'junegunn/fzf.vim'
 
 " Enhancements to netrw
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 
 " Comment things out using gcc and gc
 Plug 'tpope/vim-commentary'
@@ -79,24 +79,46 @@ endif
 " Plug 'dylon/vim-antlr'
 
 " Execute REST calls within Vim
-Plug 'diepm/vim-rest-console'
+" Plug 'diepm/vim-rest-console'
 " Plug 'bewakes/vim-rest-client'
 
 " Vim Wiki
 Plug 'vimwiki/vimwiki'
 
+" Task Wiki
+" Need to install tasklib (Python):
+"   cd to vim2/plugged/taskwiki
+"   find the version of python being used by brew/vim (since brew installs vim)
+"      :py3 import sys
+"      :py3 print(sys.path)
+"   install (python version as of 15-May-2021):
+"      /usr/local/opt/python@3.9/bin/python3 -m pip install -r requirements.txt
+" Plug 'tools-life/taskwiki'
+
+" Vim Fugitive - A Git wrapper so awesome, it should be illegal
+Plug 'tpope/vim-fugitive'
+
 " calendar.vim
-Plug 'mattn/calendar-vim'
+" Plug 'mattn/calendar-vim'
+
+" vifm
+Plug 'vifm/vifm.vim'
 
 " Initialize plugin system
 call plug#end()
 
 
 " TODO - figure out how to put this in the after/plugin/vim-wiki.vim file (or similar). Didn't work when I put it there.
-let g:vimwiki_list = [{'path': '~/vimwiki/',
+let g:vimwiki_global_ext = 0
+let g:vimwiki_list = [{'path': '~/git/vimwiki/',
                      \ 'syntax': 'markdown',
                      \ 'ext': '.wiki'}]
 
+" TODO - move these to a vifm-specific file?
+let g:vifm_replace_netrw = 1
+
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 " ======= OPTIONS ======= {{{1
 

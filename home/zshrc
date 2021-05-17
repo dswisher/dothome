@@ -110,12 +110,25 @@ if [ -f /usr/local/bin/brew ]; then
     export HOMEBREW_AUTO_UPDATE_SECS=86400
 fi
 
+# Use vifm to change directory
+vicd()
+{
+    local dst="$(command vifm --choose-dir - "$@")"
+    if [ -z "$dst" ]; then
+        echo 'Directory picking cancelled/failed'
+        return 1
+    fi
+    cd "$dst"
+    pwd
+}
+
 # Fuzzy cd - fcd
 unalias fcd 2> /dev/null
 fcd() {
-    local dest_dir=$($HOME/bin/fcd-input.sh | fzf )
+    local dest_dir=$($HOME/bin/fcd-pick.sh $1 )
     if [[ $dest_dir != '' ]]; then
         cd "$dest_dir"
+        pwd
     fi
 }
 

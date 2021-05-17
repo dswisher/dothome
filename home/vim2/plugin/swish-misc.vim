@@ -1,6 +1,6 @@
 
-nnoremap <silent> <leader>ve :edit $MYVIMRC<cr>
-nnoremap <silent> <leader>vs :source $MYVIMRC<cr>
+nnoremap <silent> <leader>ve :edit $MYVIMRC<CR>
+nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
 " Quickfix shortcuts
 nnoremap <leader>qc :cclose<cr>

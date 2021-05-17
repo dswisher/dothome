@@ -1,6 +1,10 @@
 #!/bin/bash
 
-TARGET=$(fzf)
+if [[ "$1" != "" ]]; then
+    QUERY="-q $1"
+fi
+
+TARGET=$(fzf $QUERY -1)
 
 if [[ $TARGET != '' ]]; then
     $EDITOR $TARGET

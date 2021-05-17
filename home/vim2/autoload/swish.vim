@@ -23,11 +23,11 @@ function! swish#SetupOmnisharpKeymap() abort
     " Populate quickfix with all code issues in solution
     nnoremap <buffer> <silent> <Leader>fb :OmniSharpGlobalCodeCheck<CR>
 
-    " Navigate between methods/classes
-    nnoremap <buffer> <silent> <Leader>fk :OmniSharpNavigateUp<CR>
-    nnoremap <buffer> <silent> <Leader>fj :OmniSharpNavigateDown<CR>
-
     " Fix usings
     nnoremap <buffer> <silent> <Leader>fx :OmniSharpFixUsings<CR>
+
+    " Navigate up and down by method/property/field
+    nnoremap <buffer> <silent> [[ :OmniSharpNavigateUp<CR>
+    nnoremap <buffer> <silent> ]] :OmniSharpNavigateDown<CR>
 endfunction
 

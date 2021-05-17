@@ -10,3 +10,6 @@ let g:OmniSharp_server_stdio = 1
 " signatures are fetched.
 let g:omnicomplete_fetch_full_documentation = 1
 
+" Use fzf to display usages
+let g:OmniSharp_selector_findusages = 'fzf'
+

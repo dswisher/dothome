@@ -1,10 +1,15 @@
 
-" TODO - only load if vim-wiki is loaded
+" include guard; quit if vimwiki isn't loaded
+if ! exists(':VimwikiMakeDiaryNote')
+    finish
+endif
 
-nmap <Nop> <Plug>VimwikiRemoveHeaderLevel
+" Put this back, if I ever switch from vifm back to netrw
+" nmap <Nop> <Plug>VimwikiRemoveHeaderLevel
 
 nmap <leader>d <Plug>VimwikiMakeDiaryNote
-nmap <leader>wf :Files ~/vimwiki/<CR>
+nmap <leader>t :edit ~/git/vimwiki/todo.wiki<CR>
+nmap <leader>wf :Files ~/git/vimwiki/<CR>
 
 " From https://mkaz.blog/working-with-vim/vimwiki/
 " tried using auto_diary_index in main vimrc, but this seems to work better?
