@@ -26,6 +26,9 @@ function! swish#SetupOmnisharpKeymap() abort
     " Fix usings
     nnoremap <buffer> <silent> <Leader>fx :OmniSharpFixUsings<CR>
 
+    " Restart all servers (to pick up new dependencies, say)
+    nnoremap <buffer> <silent> <Leader>fq :OmniSharpRestartAllServers<CR>
+
     " Navigate up and down by method/property/field
     nnoremap <buffer> <silent> [[ :OmniSharpNavigateUp<CR>
     nnoremap <buffer> <silent> ]] :OmniSharpNavigateDown<CR>
