@@ -139,6 +139,32 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! reload :write | restart
 
+
+" ------------------------------------------------------------------------------
+" Book Marks"
+" ------------------------------------------------------------------------------
+
+" For now, at least, start with a clean slate
+delbmarks!
+
+bmark! ~/git/rnc/feedgen/rnc-feedgen-api-shared/ shared
+bmark! ~/git/rnc/feedgen/rnc-feedgen-shared/ shared
+bmark! ~/git/rnc/feedgen/rnc-feeds-shared/ shared
+
+bmark! ~/git/rnc/feedgen/rnc-feedgen-dashboard/ dashboard
+
+bmark! ~/git/rnc/feedgen/rnc-feedgen-file-loader/ loader
+
+bmark! ~/git/rnc/feedgen/rnc-feedgen-file-tracker/ tracker
+bmark! ~/git/rnc/feedgen/rnc-feedgen-hydration-tracker/ tracker
+bmark! ~/git/rnc/feedgen/rnc-feedgen-snapshot-tracker/ tracker
+
+bmark! ~/git/rnc/feedgen/rnc-feedgen-rest-client-tool/ tool
+bmark! ~/git/rnc/feedgen/rnc-feedgen-devtools/ tool
+
+bmark! ~/git/rnc/feedgen/rnc-feeds-profile-explorer/ explorer
+
+
 " ------------------------------------------------------------------------------
 
 " The file type is for the default programs to be used with
@@ -375,7 +401,7 @@ nnoremap cc cw<c-u>
 nnoremap A cw
 
 " Quick access to bookmarks
-nnoremap ,b :bmarks<cr>
+nnoremap ,k :bmarks<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>

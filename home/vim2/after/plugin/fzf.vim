@@ -5,7 +5,7 @@ endif
 
 nnoremap <silent> <leader>o :Files<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
-nnoremap <silent> <leader>m :Marks<cr>
+nnoremap <silent> <leader>k :Marks<cr>
 
 " 15-May-2021 - found I wasn't using this, and want to use leader-g for vim-fugitive
 " nnoremap <silent> <leader>g :GFiles<cr>

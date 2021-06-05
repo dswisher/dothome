@@ -62,12 +62,6 @@ if executable('dotnet')
     if s:lsp_installed
         Plug 'prabirshrestha/asyncomplete-lsp.vim'
     endif
-
-    if has('python3')
-        Plug 'SirVer/ultisnips'
-        Plug 'honza/vim-snippets'
-        Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
-    endif
 endif
 
 " A collection of language packs for Vim. Improves syntax and indentation support.
@@ -91,28 +85,30 @@ endif
 " Vim Wiki
 Plug 'vimwiki/vimwiki'
 
-" Task Wiki
-" Need to install tasklib (Python):
-"   cd to vim2/plugged/taskwiki
-"   find the version of python being used by brew/vim (since brew installs vim)
-"      :py3 import sys
-"      :py3 print(sys.path)
-"   install (python version as of 15-May-2021):
-"      /usr/local/opt/python@3.9/bin/python3 -m pip install -r requirements.txt
-" Plug 'tools-life/taskwiki'
-
-" Vim Fugitive - A Git wrapper so awesome, it should be illegal
-Plug 'tpope/vim-fugitive'
-
-" calendar.vim
-" Plug 'mattn/calendar-vim'
-
 " vifm
 Plug 'vifm/vifm.vim'
+
+" vim abolish - case sensitive substitution plus a few other tidbits
+Plug 'tpope/vim-abolish'
+
+" Highlight matching parens
+Plug 'Yggdroot/hiPairs'
 
 " Initialize plugin system
 call plug#end()
 
+" TODO - put this someplace, if it works
+" Disable matching curly braces, etc.
+" let g:loaded_matchparen = 1
+let g:hiPairs_enable_matchParen= 0
+
+let g:hiPairs_hl_matchPair = { 'term'    : 'bold',
+                \              'cterm'   : 'bold',
+                \              'ctermfg' : '11',
+                \              'ctermbg' : '18',
+                \              'gui'     : 'bold',
+                \              'guifg'   : 'Red',
+                \              'guibg'   : '#D3B17D' }
 
 " TODO - figure out how to put this in the after/plugin/vim-wiki.vim file (or similar). Didn't work when I put it there.
 let g:vimwiki_global_ext = 0
@@ -126,10 +122,6 @@ let g:vifm_replace_netrw = 1
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 
-" TODO - move these, too!
-let g:UltiSnipsExpandTrigger="<c-_>"
-let g:UltiSnipsJumpForwardTrigger="<c-_>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " ======= OPTIONS ======= {{{1
 
@@ -157,7 +149,7 @@ set relativenumber      " use relative numbers
 set scrolloff=2         " keep a couple of lines above/below cursor
 set shiftround          " round indent when using > and <
 set shiftwidth=0        " when indenting, use one tabstop
-" set showcmd             " show partial commands in status line
+set showcmd             " show partial commands in status line, show visual selection length
 " set signcolumn=yes      " recommended by coc, always show the sign column for diagnostics
 set tabstop=4           " for almost all file types, use 4 spaces
 set updatetime=300      " recommended by coc, default of 4000 leads to delays
