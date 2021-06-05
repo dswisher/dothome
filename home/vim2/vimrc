@@ -134,6 +134,7 @@ let maplocalleader = ','
 filetype plugin indent on
 
 " Misc settings
+set nocompatible
 " set autoindent          " always set autoindenting on
 set cmdheight=2         " recommended by coc, give more space for displaying messages
 set directory=~/.vim/swapfiles//    " put all .swp files in one place
@@ -156,7 +157,6 @@ set updatetime=300      " recommended by coc, default of 4000 leads to delays
 " set wildmenu
 set nowrap              " don't wrap lines
 " set wrapscan            " wrap searches around end of file
-set nocompatible
 
 " file type: ALL
 augroup filetype_all
