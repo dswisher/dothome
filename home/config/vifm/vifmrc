@@ -149,11 +149,15 @@ delbmarks!
 
 bmark! ~/git/rnc/feedgen/rnc-feedgen-api-shared/ shared
 bmark! ~/git/rnc/feedgen/rnc-feedgen-shared/ shared
-bmark! ~/git/rnc/feedgen/rnc-feeds-shared/ shared
+bmark! ~/git/rnc/delivery/rnc-feeds-shared/ shared
 
 bmark! ~/git/rnc/feedgen/rnc-feedgen-dashboard/ dashboard
 
-bmark! ~/git/rnc/feedgen/rnc-feedgen-file-loader/ loader
+bmark! ~/git/rnc/feedgen/rnc-feedgen-file-loader/ worker
+bmark! ~/git/rnc/feedgen/rnc-feedgen-writer-worker/ worker
+bmark! ~/git/rnc/feedgen/rnc-feedgen-datastore-generator/ worker
+bmark! ~/git/rnc/feedgen/rnc-feedgen-profile-hydrator/ worker
+bmark! ~/git/rnc/feedgen/rnc-feedgen-profile-validator/ worker
 
 bmark! ~/git/rnc/feedgen/rnc-feedgen-file-tracker/ tracker
 bmark! ~/git/rnc/feedgen/rnc-feedgen-hydration-tracker/ tracker
@@ -163,6 +167,17 @@ bmark! ~/git/rnc/feedgen/rnc-feedgen-rest-client-tool/ tool
 bmark! ~/git/rnc/feedgen/rnc-feedgen-devtools/ tool
 
 bmark! ~/git/rnc/feedgen/rnc-feeds-profile-explorer/ explorer
+
+bmark! ~/git/rnc/feedgen/rnc-feedgen-datastore-orchestrator/ orc
+bmark! ~/git/rnc/feedgen/rnc-feedgen-writer-orchestrator/ orc
+
+bmark! ~/git/rnc/delivery/rnc-feeds-admin-api/ admin
+
+bmark! ~/git/rnc/delivery/rnc-feeds-iam/ infra
+bmark! ~/git/rnc/delivery/rnc-feeds-sg/ infra
+bmark! ~/git/rnc/delivery/rnc-feeds-vault/ infra
+
+bmark! ~/git/list-refs/dotnet-list-refs/ list-refs
 
 
 " ------------------------------------------------------------------------------
