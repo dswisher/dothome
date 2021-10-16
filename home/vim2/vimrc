@@ -23,6 +23,19 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Quick-search for two characters (sxy would find next occurance of xy)
+" Plug 'justinmk/vim-sneak'
+
+" Highlight the a unique character in each word to make 'f' more powerful
+" See below for color-scheme bindings
+" Plug 'unblevable/quick-scope'
+
+" Use leader-leader followed by a motion to speed-move
+Plug 'easymotion/vim-easymotion'
+
+" Adds additional text objects, so things like 'ci|' work
+Plug 'wellle/targets.vim'
+
 " Intellisense, via language server protocol
 let s:coc_installed = 0     " can't use the coc plugin's flag, as that won't be loaded yet
 if executable('dotnet')
@@ -94,6 +107,10 @@ Plug 'tpope/vim-abolish'
 " Highlight matching parens
 Plug 'Yggdroot/hiPairs'
 
+" which-key - popup of key mappings
+" Can't quite figure out how to set this up properly: https://github.com/liuchengxu/vim-which-key
+" Plug 'liuchengxu/vim-which-key'
+
 " Initialize plugin system
 call plug#end()
 
@@ -116,6 +133,12 @@ let g:vimwiki_list = [{'path': '~/git/vimwiki/',
                      \ 'syntax': 'markdown',
                      \ 'ext': '.wiki'}]
 
+
+" TODO - Easymotion bindings - move to better place
+" Replaces the default use of 's' - substitute text for single character
+map s <Plug>(easymotion-s)
+
+
 " TODO - move these to a vifm-specific file?
 let g:vifm_replace_netrw = 1
 
@@ -132,6 +155,17 @@ let maplocalleader = ','
 " Now that we have a bit more confidence in our runtime environment, set up
 " all of the filetype detection, plugin, and indent hooks.
 filetype plugin indent on
+
+" Set up quick-scope colors; needs to be before color scheme is set
+" TODO - move this to a better place
+" augroup qs_colors
+"     autocmd!
+"     autocmd ColorScheme * highlight QuickScopePrimary ctermfg=yellow ctermbg=black cterm=underline
+"     autocmd ColorScheme * highlight QuickScopeSecondary ctermfg=red ctermbg=black cterm=underline
+" augroup END
+
+" Set the color scheme, using one of the built-ins
+colo ron
 
 " Misc settings
 set nocompatible
