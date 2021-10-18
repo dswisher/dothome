@@ -111,6 +111,10 @@ if [ -f /usr/local/bin/brew ]; then
     export HOMEBREW_AUTO_UPDATE_SECS=86400
 fi
 
+# todo.sh
+# TODO - add check to make sure it exists
+alias t=todo.sh
+
 # Use vifm to change directory
 vicd()
 {
@@ -121,16 +125,6 @@ vicd()
     fi
     cd "$dst"
     pwd
-}
-
-# Fuzzy cd - fcd
-unalias fcd 2> /dev/null
-fcd() {
-    local dest_dir=$($HOME/bin/fcd-pick.sh $1 )
-    if [[ $dest_dir != '' ]]; then
-        cd "$dest_dir"
-        pwd
-    fi
 }
 
 # Host-specific hacks

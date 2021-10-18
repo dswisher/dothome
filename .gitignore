@@ -26,3 +26,6 @@ home/vim/bundle/vim-highlightedyank
 
 home/vim2/plugged
 home/vim2/.netrwhist
+
+home/config/nvim/plugin
+

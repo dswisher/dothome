@@ -63,6 +63,16 @@ dorelink() {
   ln -s $DEST $SRC
 }
 
+configlink() {
+  SRC=$HOME/.config/$1
+  DEST=$DIR/home/config/$1
+
+  if [ ! -h $SRC ]; then
+    echo "Linking: $SRC -> $DEST"
+    ln -s $DEST $SRC
+  fi
+}
+
 tmuxcolorlink() {
   if [ `command -v tmux 2>/dev/null` ]; then
     TMUX_VERSION="$(tmux -V | sed 's/[a-z ]//g')"
@@ -103,7 +113,9 @@ link)
 	dounlink "vimrc"
 	dorelink "vim" "vim2"
 	dolink "zshrc"
+	dolink "todo.cfg"
     dolink "config/vifm/vifmrc"
+    configlink "nvim"
   tmuxcolorlink
   if [ -d $HOME/bin ]; then
     binlink

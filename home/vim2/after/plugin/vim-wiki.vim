@@ -8,7 +8,7 @@ endif
 " nmap <Nop> <Plug>VimwikiRemoveHeaderLevel
 
 nmap <leader>d <Plug>VimwikiMakeDiaryNote
-nmap <leader>t :edit ~/git/vimwiki/todo.wiki<CR>
+" nmap <leader>t :edit ~/git/vimwiki/todo.wiki<CR>
 nmap <leader>wf :Files ~/git/vimwiki/<CR>
 
 " From https://mkaz.blog/working-with-vim/vimwiki/
@@ -24,7 +24,7 @@ augroup end
 " TODO - be smarter about diary pages
 autocmd BufNewFile *.wiki :r! echo # %:t:r
 
-" remap diary nav, as default ctrl-up and ctrl-down do not work well on a map
+" remap diary nav, as default ctrl-up and ctrl-down do not work well on a mac
 " TODO - add <silent>?
 " TODO - put these in augroup?
 " TODO - move to filetype plugin? See https://vi.stackexchange.com/a/10666
