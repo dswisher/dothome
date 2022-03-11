@@ -31,6 +31,9 @@ return require('packer').startup(function(use)
     use 'bluz71/vim-nightfly-guicolors'
     -- use 'folke/tokyonight.nvim'
 
+    use 'cocopon/colorswatch.vim'   -- adds ColorSwatchGenerate command
+    use 'cocopon/inspecthi.vim'     -- adds Inspecthi command to show link structure of highlighting groups
+
     -- vimwiki - personal wiki in vim, with diary
     -- TODO - enable vimwiki, once I figure out how to config the path and other settings
     -- use 'vimwiki/vimwiki'

@@ -147,8 +147,9 @@ command! reload :write | restart
 " For now, at least, start with a clean slate
 delbmarks!
 
-bmark! ~/git/rnc/feedgen/ feedgen
 bmark! ~/git/rnc/delivery/ delivery
+bmark! ~/git/rnc/feedgen/ feedgen
+bmark! ~/git/ibd/ ibd
 
 " bmark! ~/git/rnc/feedgen/rnc-feedgen-api-shared/ shared
 " bmark! ~/git/rnc/feedgen/rnc-feedgen-test-shared/ shared

@@ -26,6 +26,9 @@ Plug 'easymotion/vim-easymotion'
 " Adds additional text objects, so things like 'ci|' work
 Plug 'wellle/targets.vim'
 
+" Close HTML style tags
+Plug 'alvan/vim-closetag'
+
 " Intellisense, via language server protocol
 let s:coc_installed = 0     " can't use the coc plugin's flag, as that won't be loaded yet
 if executable('dotnet')
@@ -98,7 +101,7 @@ Plug 'tpope/vim-abolish'
 Plug 'Yggdroot/hiPairs'
 
 " Run jq interactively in Vim
-Plug 'bfrg/vim-jqplay'
+" Plug 'bfrg/vim-jqplay'
 
 " which-key - popup of key mappings
 " Can't quite figure out how to set this up properly: https://github.com/liuchengxu/vim-which-key
@@ -106,6 +109,9 @@ Plug 'bfrg/vim-jqplay'
 
 " Initialize plugin system
 call plug#end()
+
+" TODO - put this someplace, if it works
+let g:closetag_filenames = '*.html,*.cshtml'
 
 " TODO - put this someplace, if it works
 " Disable matching curly braces, etc.

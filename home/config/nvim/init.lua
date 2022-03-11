@@ -6,10 +6,12 @@ require('plugins')
 
 
 -- TODO - move this to settings? Explore other color schemes - need one that doesn't use hot pink for completions
-vim.cmd [[colorscheme nightfly]]
+-- vim.cmd [[colorscheme nightfly]]
 
 -- vim.g.tokyonight_style = "night"
 -- vim.cmd[[colorscheme tokyonight]]
+
+vim.cmd [[colorscheme ron]]
 
 
 -- TODO - move these keymaps to their own file
