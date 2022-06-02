@@ -1,17 +1,52 @@
 
-" From https://github.com/rekendahl/dotfiles/blob/master/.ideavimrc#L155
-" Set leader to ,
-" Note: This line MUST come before any <leader> mappings
-let mapleader=','
-let maplocalleader = ' '
+" Basic settings
+set notimeout   " needed by which-key
+set relativenumber
+
+" NERDTree, so vim keys can be used in explorer
+set NERDTree
+
+" which-key - ...displays available keybindings in a popup
+set which-key
+
 
 " From https://github.com/beloglazov/vimrc/blob/master/.ideavimrc
-nnoremap / :action Find<CR>
-nnoremap n :action FindNext<CR>
-nnoremap N :action FindPrevious<CR>
+" nnoremap / :action Find<CR>
+" nnoremap n :action FindNext<CR>
+" nnoremap N :action FindPrevious<CR>
+
+" Use ctrl+c to get out of normal mode
+map <C-c> <Esc>
 
 " My own fun, for actions: http://keithlea.com/idea-actions/
-nnoremap <leader>e :action GotoNextError<CR>
-nnoremap <leader>S :action SelectIn<CR>
-nnoremap <leader>U :action FindUsages<CR>
+" nnoremap <leader>e :action GotoNextError<CR>
+" nnoremap <leader>S :action SelectIn<CR>
+" nnoremap <leader>U :action FindUsages<CR>
 
+" ,c - code-manipulation hotkeys
+let g:WhichKeyDesc_leader_code = "<leader>c code stuff"
+noremap <silent> <leader>cc :action CommentByLineComment<CR>
+noremap <silent> <leader>cr :action ReformatCode<CR>
+noremap <silent> <leader>cs :action SurroundWith<CR>
+
+" ,e - editor related things
+let g:WhichKeyDesc_leader_editor = "<leader>e editor"
+noremap <silent> <leader>eo :action CloseAllEditorsButActive<CR>
+
+" ,g - goto things
+let g:WhichKeyDesc_leader_goto = "<leader>g goto"
+noremap <silent> <leader>gi :action ReSharperGotoImplementation<CR>
+
+" ,v - vim related things
+let g:WhichKeyDesc_leader_vim = "<leader>v vim things"
+noremap <silent> <leader>ve :e ~/.ideavimrc<CR>
+noremap <silent> <leader>vs :source ~/.ideavimrc<CR>
+
+" ,w - window related things
+let g:WhichKeyDesc_leader_window = "<leader>w window"
+" tried ToggleDistractionFreeMode for wb, but too extreme for me
+noremap <silent> <leader>wb :action HideAllWindows<CR>
+" noremap <silent> <leader>we :action ActivateProjectToolWindow<CR>
+noremap <silent> <leader>we :action SelectInProjectView<CR>
+noremap <silent> <leader>wh :action HideActiveWindow<CR>
+noremap <silent> <leader>ws :action ActivateStructureToolWindow<CR>

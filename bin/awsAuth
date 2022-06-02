@@ -17,6 +17,9 @@ case $PROFILE in
     con-nonprod)
         ROLE="arn:aws:iam::365567845318:role/connonprodmktdata.okta.UsersElevated"
         ;;
+    con-nonprod-buadmin)
+        ROLE="arn:aws:iam::365567845318:role/connonprodmktdata.okta.BUAdmin"
+        ;;
     rnc-nonprod)
         ROLE="arn:aws:iam::880671340840:role/pibnonprodrnc.okta.BUAdmin"
         ;;
