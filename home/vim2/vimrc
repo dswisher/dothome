@@ -144,15 +144,15 @@ let g:loaded_netrwPlugin = 1
 " ======= OPTIONS ======= {{{1
 
 " I prefer comma as the leader, as opposed to the default \
-let mapleader=","
-let maplocalleader = ','
+" let mapleader=","
+" let maplocalleader = ','
 
 " Now that we have a bit more confidence in our runtime environment, set up
 " all of the filetype detection, plugin, and indent hooks.
 filetype plugin indent on
 
 " Set the color scheme, using one of the built-ins
-colo ron
+" colo ron
 
 " Misc settings
 set nocompatible
