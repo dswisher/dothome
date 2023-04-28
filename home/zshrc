@@ -115,6 +115,11 @@ if [ -d $HOME/.dotnet/tools ]; then
     export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 
+# MySQL client, on Mac: brew install mysql-client
+if [ -d /usr/local/opt/mysql-client/bin ]; then
+    export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+fi
+
 # todo.sh
 # TODO - add check to make sure it exists
 # alias t=todo.sh
