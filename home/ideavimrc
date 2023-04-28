@@ -11,6 +11,9 @@ set NERDTree
 " which-key - ...displays available keybindings in a popup
 set which-key
 
+" fancy join (shift-J) - see https://github.com/JetBrains/ideavim/blob/master/doc/ideajoin-examples.md
+set ideajoin
+
 
 " From https://github.com/beloglazov/vimrc/blob/master/.ideavimrc
 " nnoremap / :action Find<CR>
