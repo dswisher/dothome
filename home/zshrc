@@ -116,7 +116,9 @@ if [ -d $HOME/.dotnet/tools ]; then
 fi
 
 # MySQL client, on Mac: brew install mysql-client
-if [ -d /usr/local/opt/mysql-client/bin ]; then
+if [ -d /opt/homebrew/opt/mysql-client/bin ]; then
+    export PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"
+elif [ -d /usr/local/opt/mysql-client/bin ]; then
     export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 fi
 
@@ -139,8 +141,11 @@ fi
 # Host-specific hacks
 HOST=`hostname`
 
-if [[ "$HOST" = "C02Z32DYLVDR" || "$HOST" = "Q6GQCX1C96.local" || "$HOST" = "Smack.local" ]]; then
+if [[ "$HOST" = "C02Z32DYLVDR" || "$HOST" = "Q6GQCX1C96.local" || "$HOST" == "Q6GQCX1C96" || "$HOST" = "Smack.local" ]]; then
     export PS1="dj-mac: "
+
+    alias feedgen='cd ~/git/rnc/feedgen'
+    alias delivery='cd ~/git/rnc/delivery'
 fi
 
 if [ "$USER" = "ec2-user" ]; then
