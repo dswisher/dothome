@@ -156,6 +156,9 @@ if [ "$USER" = "ec2-user" ]; then
         export PS1="ec2-dev: "
     elif [ -x "$(command -v aws)" ] && [ -x "$(command -v jq)" ]; then
         ACCOUNT=$(aws sts get-caller-identity | jq -r '.Account')
+        AWS_INSTANCE_ID=`curl -s http://169.254.169.254/latest/meta-data/instance-id`
+        # TODO - pull the region from metadata or someplace?
+        EC2_NAME=$(aws ec2 describe-tags --region us-east-1 --filters "Name=resource-id,Values=$AWS_INSTANCE_ID" "Name=key,Values=Name" --output text | cut -f5 | sed 's/^Adhoc-Instance-//')
         case $ACCOUNT in
         804996416271)
           export PS1="ec2-PROD: "
@@ -164,7 +167,7 @@ if [ "$USER" = "ec2-user" ]; then
           export PS1="ec2-stg: "
           ;;
         880671340840)
-          export PS1="ec2-dev: "
+          export PS1="ec2-dev-$EC2_NAME: "
           ;;
         esac
     fi
