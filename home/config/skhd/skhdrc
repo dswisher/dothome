@@ -1,0 +1,39 @@
+
+# focus window
+hyper - a : yabai -m window --focus west
+hyper - s : yabai -m window --focus south
+hyper - w : yabai -m window --focus north
+hyper - d : yabai -m window --focus east
+
+# warp managed window
+hyper - h : yabai -m window --warp west
+hyper - j : yabai -m window --warp south
+hyper - k : yabai -m window --warp north
+hyper - l : yabai -m window --warp east
+
+# stack managed window
+hyper - v : yabai -m window --stack west
+hyper - b : yabai -m window --stack east
+
+hyper - z : yabai -m window --focus stack.prev
+hyper - x : yabai -m window --focus stack.next
+
+# toggle window fullscreen zoom
+hyper - f : yabai -m window --toggle zoom-fullscreen
+
+# rotate tree
+hyper - r : yabai -m space --rotate 90
+
+# toggle window split type
+hyper - e : yabai -m window --toggle split
+
+# focus next/prev display
+# hyper - n : yabai -m display --focus next
+# hyper - p : yabai -m display --focus prev
+
+hyper - n : yabai -m display --focus east
+hyper - p : yabai -m display --focus west
+
+
+hyper - y : yabai --restart-service
+

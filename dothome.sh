@@ -115,6 +115,8 @@ link)
 	dolink "zshrc"
 	dolink "todo.cfg"
     dolink "config/vifm/vifmrc"
+    configlink "yabai"
+    configlink "skhd"
     configlink "nvim"
   tmuxcolorlink
   if [ -d $HOME/bin ]; then
