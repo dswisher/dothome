@@ -118,6 +118,7 @@ link)
     configlink "yabai"
     configlink "skhd"
     configlink "nvim"
+    configlink "kitty"
   tmuxcolorlink
   if [ -d $HOME/bin ]; then
     binlink
