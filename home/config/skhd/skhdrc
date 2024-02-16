@@ -49,14 +49,22 @@ yabai < 8 : skhd -k "escape"; yabai -m window --space 8; yabai -m window --focus
 yabai < 9 : skhd -k "escape"; yabai -m window --space 9; yabai -m window --focus recent
 yabai < 0 : skhd -k "escape"; yabai -m window --space 0; yabai -m window --focus recent
 
+yabai < n : skhd -k "escape"; yabai -m window --space next; yabai -m window --focus recent
+yabai < p : skhd -k "escape"; yabai -m window --space prev; yabai -m window --focus recent
+
 # move window to display and keep it focused
 yabai < h : skhd -k "escape"; yabai -m window --display west; yabai -m window --focus recent
 yabai < l : skhd -k "escape"; yabai -m window --display east; yabai -m window --focus recent
 
+# Equalize size of windows
+yabai < b : skhd -k "escape"; yabai -m space --balance
+
+# Float / Unfloat window
+yabai < f : skhd -k "escape"; yabai -m window --toggle float; yabai -m window --toggle border
+
 # restart yabai and skhd
 yabai < y : skhd -k "escape"; yabai --restart-service
 yabai < u : skhd -k "escape"; skhd --restart-service
-
 
 # stack managed window
 # hyper - v : yabai -m window --stack west
