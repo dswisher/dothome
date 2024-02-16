@@ -181,4 +181,12 @@ fi
 # Completions, etc.
 autoload -U compinit && compinit
 
+# Set up zoxide - improved cd - uses "z" in the shell - see https://github.com/ajeetdsouza/zoxide
+if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide ]]; then
+    export _ZO_ECHO=1
+    eval "$(zoxide init zsh)"
+fi
+
+# Fuzzy fun
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
