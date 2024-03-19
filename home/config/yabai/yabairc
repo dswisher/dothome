@@ -45,9 +45,17 @@ yabai -m config layout bsp
 
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+
 yabai -m rule --add title="^Welcome to JetBrains Rider$" manage=off
 
 yabai -m rule --add app="^JetBrains Rider$" title="Rename" manage=off
+yabai -m rule --add app="^JetBrains Rider$" title="Add Reference" manage=off
+yabai -m rule --add app="^JetBrains Rider$" title="Preferences" manage=off
+yabai -m rule --add app="^JetBrains Rider$" title="Create: .*" manage=off
+yabai -m rule --add app="^JetBrains Rider$" title="File Properties - .*" manage=off
+
+yabai -m rule --add app="MonoGamePocs.Desktop" manage=off
+yabai -m rule --add app="Swish.Framework.TestApp" manage=off
 
 echo "yabai configuration loaded..."
 

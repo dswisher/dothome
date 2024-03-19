@@ -173,6 +173,9 @@ if [ "$USER" = "ec2-user" ]; then
     fi
 fi
 
+# On EC2 instances, SHELL was set improperly. Fix that...
+export SHELL=$(which zsh)
+
 # Local host-specific stuff that shouldn't be in source control
 if [ -f $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
