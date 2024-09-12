@@ -12,18 +12,23 @@ setopt hist_ignore_dups # Do not write events to history that are duplicates of 
 # Set vi command-line editing mode
 bindkey -v
 
+
 # Have info use vi key bindings; an alias seems to be the only way
 alias info='info --vi-keys'
+
 
 # Enable highlighting in less
 alias less='less -R'
 
+
 # clear LSCOLORS
 unset LSCOLORS
+
 
 # make directories more visible on a dark background
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+
 
 # use vim whenever possible
 if [ -f /usr/local/bin/vim ]; then
@@ -34,8 +39,10 @@ fi
 export VISUAL="$EDITOR"
 export GIT_EDITOR="$EDITOR"
 
+
 # make sure we use vim
 alias vi=$EDITOR
+
 
 # ripgrep config
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
@@ -51,17 +58,21 @@ elif [ -f /opt/homebrew/bin/brew ]; then
     export HOMEBREW_AUTO_UPDATE_SECS=86400
 fi
 
+
 # my virtualenv wrapper
 # if [ -f $HOME/git/dothome/myvirtualenv.sh ]; then
 #     export VENV_DIR=~/VirtualEnvs
 #     source $HOME/git/dothome/myvirtualenv.sh
 # fi
 
+
 # Put local bin in path
 export PATH="$PATH:$HOME/bin"
 
+
 # FZF and RG
 export FZF_DEFAULT_COMMAND='rg --files'
+
 
 # pyenv support (if installed)
 if [ -d $HOME/.pyenv ]; then
@@ -75,6 +86,7 @@ if [ -d $HOME/.pyenv ]; then
         eval "$(pyenv virtualenv-init -)";
     fi
 fi
+
 
 # jenv support (if installed)
 if [ -d $HOME/.jenv ]; then
@@ -92,10 +104,12 @@ else
     fi
 fi
 
+
 # OpenCCG goofiness
 if [ -d $HOME/git/openccg ]; then
     export OPENCCG_HOME=/Users/dsswishe/git/openccg
 fi
+
 
 # Docker stuff
 if [ -f /usr/bin/docker ]; then
@@ -110,16 +124,25 @@ if [ -d $HOME/.nvm ]; then
     # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
+
 # Dotnet tools
 if [ -d $HOME/.dotnet/tools ]; then
     export PATH="$PATH:$HOME/.dotnet/tools"
 fi
+
 
 # MySQL client, on Mac: brew install mysql-client
 if [ -d /opt/homebrew/opt/mysql-client/bin ]; then
     export PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"
 elif [ -d /usr/local/opt/mysql-client/bin ]; then
     export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+fi
+
+
+# If it exists, add cargo (rust package manager) to the path. This is primarily so that zoxide
+# on AL2023 is available.
+if [ -d $HOME/.cargo/bin ]; then
+    export PATH="$PATH:$HOME/.cargo/bin"
 fi
 
 
@@ -168,16 +191,20 @@ if [ "$USER" = "ec2-user" ]; then
     fi
 fi
 
+
 # On EC2 instances, SHELL was set improperly. Fix that...
 export SHELL=$(which zsh)
+
 
 # Local host-specific stuff that shouldn't be in source control
 if [ -f $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
 fi
 
+
 # Completions, etc.
 autoload -U compinit && compinit
+
 
 # Set up zoxide - improved cd - uses "z" in the shell - see https://github.com/ajeetdsouza/zoxide
 if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide ]]; then
@@ -187,6 +214,7 @@ if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide ]]; then
     fi
     eval "$(zoxide init zsh)"
 fi
+
 
 # Fuzzy fun
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
