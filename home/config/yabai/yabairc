@@ -43,8 +43,9 @@ yabai -m config                                 \
 
 yabai -m config layout bsp
 
-yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
 
 yabai -m rule --add title="^Welcome to JetBrains Rider$" manage=off
 
@@ -55,7 +56,11 @@ yabai -m rule --add app="^JetBrains Rider$" title="Create: .*" manage=off
 yabai -m rule --add app="^JetBrains Rider$" title="File Properties - .*" manage=off
 
 yabai -m rule --add app="MonoGamePocs.Desktop" manage=off
+yabai -m rule --add app="Strategy.Desktop" manage=off
 yabai -m rule --add app="Swish.Framework.TestApp" manage=off
+yabai -m rule --add app="SwishRpg" manage=off
+yabai -m rule --add app="SkillRpg.Desktop" manage=off
+yabai -m rule --add app="GameMaker Game" manage=off
 
 echo "yabai configuration loaded..."
 

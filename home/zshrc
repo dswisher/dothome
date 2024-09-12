@@ -122,21 +122,14 @@ elif [ -d /usr/local/opt/mysql-client/bin ]; then
     export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 fi
 
-# todo.sh
-# TODO - add check to make sure it exists
-# alias t=todo.sh
 
-# Use vifm to change directory
-# vicd()
-# {
-#     local dst="$(command vifm --choose-dir - "$@")"
-#     if [ -z "$dst" ]; then
-#         echo 'Directory picking cancelled/failed'
-#         return 1
-#     fi
-#     cd "$dst"
-#     pwd
-# }
+# Set up chruby, used to play with Jekyll on Mac
+# if [ -d /opt/homebrew/opt/chruby/share/chruby ]; then
+#     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+#     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+#     chruby ruby-3.1.3
+# fi
+
 
 # Host-specific hacks
 HOST=`hostname`

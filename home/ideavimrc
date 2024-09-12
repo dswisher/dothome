@@ -28,36 +28,36 @@ map <C-c> <Esc>
 " nnoremap <leader>S :action SelectIn<CR>
 " nnoremap <leader>U :action FindUsages<CR>
 
-" ,c - code-manipulation hotkeys
+" \c - code-manipulation hotkeys
 let g:WhichKeyDesc_leader_code = "<leader>c code stuff"
 noremap <silent> <leader>cc :action CommentByLineComment<CR>
 noremap <silent> <leader>cr :action ReformatCode<CR>
 noremap <silent> <leader>cs :action SurroundWith<CR>
 
-" ,d - debug things
+" \d - debug things
 let g:WhichKeyDesc_leader_code = "<leader>d debug stuff"
 noremap <silent> <leader>db :action ToggleLineBreakpoint<CR>
 noremap <silent> <leader>dd :action mainRunToolbarDebugProcess<CR>
 noremap <silent> <leader>dr :action mainRunToolbarRunProcess<CR>
 noremap <silent> <leader>ds :action RunToolbarStopAction<CR>
 
-" ,e - editor related things
+" \e - editor related things
 let g:WhichKeyDesc_leader_editor = "<leader>e editor"
 noremap <silent> <leader>eo :action CloseAllEditorsButActive<CR>
 
-" ,g - goto things
+" \g - goto things
 let g:WhichKeyDesc_leader_goto = "<leader>g goto"
 noremap <silent> <leader>gi :action ReSharperGotoImplementation<CR>
 noremap <silent> <leader>gn :action NextOccurence<CR>
 noremap <silent> <leader>gp :action PreviousOccurence<CR>
 noremap <silent> <leader>gu :action FindUsages<CR>
 
-" ,v - vim related things
+" \v - vim related things
 let g:WhichKeyDesc_leader_vim = "<leader>v vim things"
 noremap <silent> <leader>ve :e ~/.ideavimrc<CR>
 noremap <silent> <leader>vs :source ~/.ideavimrc<CR>
 
-" ,w - window related things
+" \w - window related things
 let g:WhichKeyDesc_leader_window = "<leader>w window"
 " tried ToggleDistractionFreeMode for wb, but too extreme for me
 noremap <silent> <leader>wb :action HideAllWindows<CR>

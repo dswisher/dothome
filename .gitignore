@@ -1,6 +1,8 @@
 *.swp
 tags
 
+*.bak
+
 home/.vim/bundle/Vundle.vim/
 home/.vim/bundle/nerdtree/
 home/.vim/bundle/ctrlp.vim/
