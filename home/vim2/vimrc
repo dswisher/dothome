@@ -92,7 +92,7 @@ endif
 Plug 'vimwiki/vimwiki'
 
 " vifm
-Plug 'vifm/vifm.vim'
+" Plug 'vifm/vifm.vim'
 
 " vim abolish - case sensitive substitution plus a few other tidbits
 Plug 'tpope/vim-abolish'
@@ -135,10 +135,10 @@ let g:vimwiki_list = [{'path': '~/git/vimwiki/',
 
 
 " TODO - move these to a vifm-specific file?
-let g:vifm_replace_netrw = 1
+" let g:vifm_replace_netrw = 1
 
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
+" let g:loaded_netrw       = 1
+" let g:loaded_netrwPlugin = 1
 
 
 " ======= OPTIONS ======= {{{1

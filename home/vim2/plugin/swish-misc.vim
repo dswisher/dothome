@@ -1,8 +1,12 @@
 
+" open netrw (directory browser) in the folder containing the current file
+nnoremap <silent> <leader>e :e %:p:h<cr>
+
+" make it easy to edit and reload vimrc
 nnoremap <silent> <leader>ve :edit $MYVIMRC<CR>
 nnoremap <silent> <leader>vs :source $MYVIMRC<CR>
 
-" Quickfix shortcuts
+" quickfix shortcuts
 nnoremap <leader>qc :cclose<cr>
 nnoremap <leader>qf :cfirst<cr>
 nnoremap <leader>ql :clast<cr>
