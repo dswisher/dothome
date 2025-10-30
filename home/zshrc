@@ -94,6 +94,8 @@ if [ -d $HOME/.jenv ]; then
     eval "$(jenv init -)"
 elif [ -d /usr/lib/jvm/java-8-openjdk-amd64 ]; then
     export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+elif [ -d /opt/homebrew/Cellar/openjdk/23.0.1 ]; then
+    export JAVA_HOME="/opt/homebrew/Cellar/openjdk/23.0.1"
 else
     # Test if Java installed. This works on Mac, which cannot just test for existance
     # of java or javac, as Mac includes a shim for each that prompts to install.
@@ -118,11 +120,13 @@ if [ -f /usr/bin/docker ]; then
     # export DOCKER_TLS_VERIFY=1
 fi
 
-if [ -d $HOME/.nvm ]; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
+
+# Node Version Manager
+# if [ -d $HOME/.nvm ]; then
+#     export NVM_DIR="$HOME/.nvm"
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#     # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# fi
 
 
 # Dotnet tools
@@ -150,7 +154,7 @@ fi
 # if [ -d /opt/homebrew/opt/chruby/share/chruby ]; then
 #     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 #     source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-#     chruby ruby-3.1.3
+#     chruby ruby-3.3.4
 # fi
 
 
