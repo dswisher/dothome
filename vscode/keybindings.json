@@ -1,0 +1,12 @@
+[
+    {
+        "key": "shift+alt+ctrl+cmd+d",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "shift+alt+ctrl+cmd+r",
+        "command": "workbench.action.debug.run",
+        "when": "!inDebugMode"
+    }
+]

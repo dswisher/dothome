@@ -98,6 +98,30 @@ binlink() {
   done
 }
 
+vscodelink() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    SRC=$HOME/Library/Application\ Support/Code/User/$1
+    DEST=$DIR/vscode/$1
+
+    echo "Working on vscode link $SRC -> $DEST..."
+
+    # If file exists (not a symlink), make a backup of the file
+    if [ -e "$SRC" ] || [ -h "$SRC" ]; then
+        if [ ! -h "$SRC" ]; then
+            echo "Saving $SRC to $SRC.SAVE"
+            mv "$SRC" "$SRC.SAVE"
+        fi
+    fi
+
+    if [ ! -h "$SRC" ]; then
+      echo "Linking: $SRC -> $DEST"
+      ln -s "$DEST" "$SRC"
+    fi
+  else
+    echo "Do not know how to symlink VSCode files on this OS."
+  fi
+}
+
 case "$1" in
 link)
 	dolink "ackrc"
@@ -119,6 +143,8 @@ link)
     configlink "skhd"
     configlink "nvim"
     configlink "kitty"
+    vscodelink "settings.json"
+    vscodelink "keybindings.json"
   tmuxcolorlink
   if [ -d $HOME/bin ]; then
     binlink

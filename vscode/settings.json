@@ -1,0 +1,9 @@
+{
+    "gitlens.currentLine.enabled": false,
+    "files.autoSave": "afterDelay",
+    "git.openRepositoryInParentFolders": "never",
+    "redhat.telemetry.enabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
+}
