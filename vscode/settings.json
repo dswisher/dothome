@@ -1,9 +1,44 @@
 {
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 12,
+    "window.zoomLevel": 1.2,
+
     "gitlens.currentLine.enabled": false,
+
     "files.autoSave": "afterDelay",
+
     "git.openRepositoryInParentFolders": "never",
+
     "redhat.telemetry.enabled": false,
+
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+
+    "outline.showArrays": false,
+    "outline.showBooleans": false,
+    "outline.showConstants": false,
+    "outline.showEnumMembers": false,
+    "outline.showEnums": false,
+    "outline.showEvents": false,
+    "outline.showFields": false,
+    "outline.showKeys": false,
+    "outline.showModules": false,
+    "outline.showNamespaces": false,
+    "outline.showNull": false,
+    "outline.showNumbers": false,
+    "outline.showObjects": false,
+    "outline.showOperators": false,
+    "outline.showPackages": false,
+    "outline.showProperties": false,
+    "outline.showStrings": false,
+    "outline.showTypeParameters": false,
+    "outline.showVariables": false,
+
+    "workbench.tree.indent": 24,
+    "workbench.tree.renderIndentGuides": "always",
+
+    "markdownlint.config": {
+        "MD012": false
     }
 }

@@ -8,5 +8,9 @@
         "key": "shift+alt+ctrl+cmd+r",
         "command": "workbench.action.debug.run",
         "when": "!inDebugMode"
+    },
+    {
+        "key": "shift+alt+ctrl+cmd+o",
+        "command": "outline.focus"
     }
 ]

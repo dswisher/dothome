@@ -223,3 +223,10 @@ fi
 # Fuzzy fun
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Set the default claude config - work config
+export CLAUDE_CONFIG_DIR=$HOME/.claude-dj
+
+alias dj-claude='export CLAUDE_CONFIG_DIR=$HOME/.claude-dj'
+alias my-claude='export CLAUDE_CONFIG_DIR=$HOME/.claude-personal'
+
+
