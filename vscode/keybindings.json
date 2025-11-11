@@ -12,5 +12,15 @@
     {
         "key": "shift+alt+ctrl+cmd+o",
         "command": "outline.focus"
+    },
+    {
+        "key": "shift+alt+ctrl+cmd+t",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "testing.runAll",
+                "workbench.view.testing.focus"
+            ]
+        }
     }
 ]

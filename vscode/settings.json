@@ -40,5 +40,13 @@
 
     "markdownlint.config": {
         "MD012": false
+    },
+
+    "workbench.colorCustomizations": {
+      "sideBar.border": "#1e3a8a",
+      "editorGroup.border": "#1e3a8a",
+      "panel.border": "#1e3a8a",
+      "activityBar.border": "#1e3a8a",
+      "sideBarSectionHeader.border": "#1e3a8a"
     }
 }
