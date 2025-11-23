@@ -34,6 +34,14 @@ Switch to zsh:
 
 **NOTE**: you may have to edit `/etc/shells` and add `which zsh`
 
+### Windows Notes
+
+On windows, to at least get my vscode settings in place, I ran the following in an administrator command prompt:
+
+    mklink "%APPDATA%\Code\User\settings.json" "C:\Users\swish\git\dothome\vscode\settings.json"
+
+I did not link anything else (yet).
+
 ## Misc
 
 ### Pyenv

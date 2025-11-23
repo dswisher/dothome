@@ -1,6 +1,7 @@
 {
     "editor.fontSize": 14,
     "terminal.integrated.fontSize": 12,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "window.zoomLevel": 1.2,
 
     "gitlens.currentLine.enabled": false,
@@ -48,5 +49,7 @@
       "panel.border": "#1e3a8a",
       "activityBar.border": "#1e3a8a",
       "sideBarSectionHeader.border": "#1e3a8a"
-    }
+    },
+
+    "claudeCode.useTerminal": true
 }
