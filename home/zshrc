@@ -145,9 +145,9 @@ fi
 
 # If it exists, add cargo (rust package manager) to the path. This is primarily so that zoxide
 # on AL2023 is available.
-if [ -d $HOME/.cargo/bin ]; then
-    export PATH="$PATH:$HOME/.cargo/bin"
-fi
+# if [ -d $HOME/.cargo/bin ]; then
+#     export PATH="$PATH:$HOME/.cargo/bin"
+# fi
 
 
 # Set up chruby, used to play with Jekyll on Mac
@@ -196,6 +196,12 @@ if [ "$USER" = "ec2-user" ]; then
 fi
 
 
+# Create an alias for fd on Ubuntu
+if [ -f /usr/bin/fdfind ]; then
+    alias fd=fdfind
+fi
+
+
 # On EC2 instances, SHELL was set improperly. Fix that...
 export SHELL=$(which zsh)
 
@@ -210,12 +216,15 @@ fi
 autoload -U compinit && compinit
 
 
+# Local stuff
+if [ -d ~/.local/bin ]; then
+    export PATH="$PATH:$HOME/.local/bin"
+fi
+
+
 # Set up zoxide - improved cd - uses "z" in the shell - see https://github.com/ajeetdsouza/zoxide
-if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide ]]; then
+if [[ -f /opt/homebrew/bin/zoxide || -f ~/.local/bin/zoxide || -f /usr/bin/zoxide ]]; then
     export _ZO_ECHO=1
-    if [ -f ~/.local/bin/zoxide ]; then
-        export PATH="$PATH:$HOME/.local/bin"
-    fi
     eval "$(zoxide init zsh)"
 fi
 
