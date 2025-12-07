@@ -22,5 +22,15 @@
                 "workbench.view.testing.focus"
             ]
         }
+    },
+    {
+        "key": "shift+alt+ctrl+cmd+g",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Run Game"
+    },
+    {
+        "key": "shift+alt+ctrl+cmd+u",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Run Gui Test"
     }
 ]

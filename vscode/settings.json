@@ -52,4 +52,11 @@
     },
 
     "claudeCode.useTerminal": true
+
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.list.horizontalScrolling": true,
+    "git.confirmSync": false,
+    "git.suggestSmartCommit": false,
+    "editor.minimap.showSlider": "always"
 }
