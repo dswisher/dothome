@@ -3,6 +3,8 @@ tags
 
 *.bak
 
+.DS_Store
+
 home/.vim/bundle/Vundle.vim/
 home/.vim/bundle/nerdtree/
 home/.vim/bundle/ctrlp.vim/
