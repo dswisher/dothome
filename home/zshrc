@@ -30,8 +30,10 @@ export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
 
-# use vim whenever possible
-if [ -f /usr/local/bin/vim ]; then
+# use neovim when available, or fall back to vim
+if [ -f /opt/homebrew/bin/nvim ]; then
+    export EDITOR=/opt/homebrew/bin/nvim
+elif [ -f /usr/local/bin/vim ]; then
     export EDITOR=/usr/local/bin/vim
 else
     export EDITOR=/usr/bin/vim
@@ -40,7 +42,7 @@ export VISUAL="$EDITOR"
 export GIT_EDITOR="$EDITOR"
 
 
-# make sure we use vim
+# make sure we use neovim or vim
 alias vi=$EDITOR
 
 
@@ -239,3 +241,6 @@ alias dj-claude='export CLAUDE_CONFIG_DIR=$HOME/.claude-dj'
 alias my-claude='export CLAUDE_CONFIG_DIR=$HOME/.claude-personal'
 
 
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
