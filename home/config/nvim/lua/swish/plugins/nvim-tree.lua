@@ -11,6 +11,8 @@ return {
     config = function()
         local api = require "nvim-tree.api"
 
+        -- TODO: figure out how to configure this so if explorer is the only window open, it nvim will still close
+
         require("nvim-tree").setup {
             view = {
                 width = 30,
@@ -25,7 +27,8 @@ return {
         -- vim.keymap.set("n", "<leader>e", "<CMD>NvimTreeFocus<CR>", { desc = "NvimTree: open or focus" })
         -- vim.keymap.set("n", "<leader>ee", "<CMD>NvimTreeToggle<CR>", { desc = "NvimTree: toggle open" })
         -- vim.keymap.set("n", "<leader>ee", "<CMD>NvimTreeFindFileToggle<CR>", { desc = "NvimTree: toggle open and find file" })
-        --
+
+        -- TODO: this does not work - it opens, but does not focus - need to use the API (see below)
         vim.keymap.set("n", "<leader>ee", "<CMD>NvimTreeOpen<CR><CMD>NvimTreeFindFile<CR>", { desc = "NvimTree: toggle open and find file" })
         vim.keymap.set("n", "<leader>ec", "<CMD>NvimTreeClose<CR>", { desc = "NvimTree: close" })
 

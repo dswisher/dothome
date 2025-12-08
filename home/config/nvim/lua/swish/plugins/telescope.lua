@@ -22,9 +22,9 @@ return {
             },
         })
 
-        vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-        vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope keymaps' })
+        vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'telescope: buffers' })
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'telescope: find files' })
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'telescope: live grep' })
+        vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'telescope: list keymaps' })
     end
 }
