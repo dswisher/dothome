@@ -1,4 +1,7 @@
 
+-- See https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua
+-- I originally copied this from here: https://github.com/mplusp/minimal-nvim-0.11-lsp-setup/blob/main/lsp/lua_ls.lua
+
 return {
   -- Command and arguments to start the server.
   cmd = { 'lua-language-server' },
