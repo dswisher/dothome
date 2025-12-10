@@ -1,12 +1,14 @@
 
+-- Core options and settings that apply to everything
 require("swish.core")
+
+-- Plugins!
 require("swish.lazy")
 
+-- Set the theme
+--   I _think_ this is used so that telescope color-pick thingy can set the theme (which I have not yet set up)
 require("current-theme")
 
--- TODO: where to put these??
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('pyright')
-
-vim.keymap.set("n", "gd", vim.lsp.buf.declaration, { desc = "lsp: go to declaration" })
+-- Set up LSP options, like key binds
+require("swish.lsp_options")
 

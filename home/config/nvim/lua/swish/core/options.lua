@@ -54,3 +54,6 @@ vim.opt.list = true
 -- TODO: read more about this
 -- vim.g.editorconfig = true
 
+-- I want to be able to use the mouse to copy/paste, and that is all. So, disable neovim mouse handling.
+vim.opt.mouse = ""
+

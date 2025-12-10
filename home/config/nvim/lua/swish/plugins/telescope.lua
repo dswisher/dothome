@@ -26,5 +26,8 @@ return {
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'telescope: find files' })
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'telescope: live grep' })
         vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'telescope: list keymaps' })
+
+        -- TODO: I'd like to filter out the "special" marks like the numbers and punctuation
+        vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'telescope: marks' })
     end
 }
