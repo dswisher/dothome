@@ -1,6 +1,7 @@
 
 -- Enable these LSP servers. The actual configs are in the /lsp directory off the root of the nvim
 -- config. The names of those files must match the names used here.
+vim.lsp.enable('csharp_ls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
 vim.lsp.enable('ruff')

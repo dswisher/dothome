@@ -23,8 +23,11 @@ return {
 
                 -- ensure these languages parsers are installed
                 ensure_installed = {
+                    "c",
                     "lua",
+                    "markdown",
                     "python",
+                    "sql",
                 },
 
             })

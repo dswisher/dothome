@@ -25,8 +25,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 -- do not autoindent
-vim.opt.autoindent = false      -- TODO - check this!
-vim.opt.smartindent = false     -- TODO - check this!
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- do not wrap long lines
 vim.opt.wrap = false

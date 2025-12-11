@@ -33,11 +33,11 @@ return {
             ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
         },
 
-        -- completion = {
-        --     menu = {
-        --         auto_show = false,      -- only show the menu when asked
-        --     },
-        -- },
+        completion = {
+            menu = {
+                auto_show = false,      -- only show the menu when asked
+            },
+        },
 
         -- Providers of suggestions
         sources = {
