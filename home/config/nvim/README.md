@@ -35,3 +35,11 @@ For a Python project, I use both `pyright` and `ruff`, and I expect the virtual 
 This means that before I start the editors, I need to activate the virtual environment.
 
 
+### Terraform
+
+For terraform files, I am trying out [terraform-ls](https://github.com/hashicorp/terraform-ls/), the "official" language server by hashicorp.
+To install:
+
+    # On Mac:
+    brew install hashicorp/tap/terraform-ls
+

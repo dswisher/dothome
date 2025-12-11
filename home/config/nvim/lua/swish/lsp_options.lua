@@ -5,6 +5,7 @@ vim.lsp.enable('csharp_ls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('pyright')
 vim.lsp.enable('ruff')
+vim.lsp.enable('terraform_ls')
 
 -- Configure diagnostics.
 vim.diagnostic.config({
