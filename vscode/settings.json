@@ -51,8 +51,6 @@
       "sideBarSectionHeader.border": "#1e3a8a"
     },
 
-    "claudeCode.useTerminal": true
-
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.editor.empty.hint": "hidden",
     "workbench.list.horizontalScrolling": true,
